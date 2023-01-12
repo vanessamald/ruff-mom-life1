@@ -18,6 +18,15 @@ const ItemSchema = new Schema({
         type: Number,
         required: true
     },
+    inventory: {
+        type: Number,
+        required: true
+    },
+    image: {
+        data: Buffer,
+        contentType: String,
+        
+    },
     date_added: {
         type: Date,
         default: Date.now
