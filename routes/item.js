@@ -4,11 +4,19 @@ const router = Router();
 
 const mongoose = require('mongoose');
 const multer = require("multer");
-/*
-const { App } = require('express');
+
+// testing 
+
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+
+/*
+router.use(multer({ dest: './images',
+rename: function (fieldname, filename) {
+  return filename;
+},
+}));
 */
 
 router.get('/items', itemController.get_items);
@@ -22,6 +30,9 @@ var imgSchema = mongoose.Schema({
     image:{data:Buffer,contentType: String}
 });
 var image = mongoose.model("image",imgSchema); 
+*/
+
+/*
 // SET STORAGE
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -32,7 +43,9 @@ var storage = multer.diskStorage({
     }
   })
   var upload = multer({ storage: storage })
+  var imgModel = require('../models/Item/Item');
 */
+
 
 /*
 router.get('/addItem', (req, res) => {
@@ -77,12 +90,12 @@ router.get('/addItem',
 */
 
 /*
-router.post("/addItem",upload.single('image'),(req,res)=>{
+router.post("/",upload.single('image'),(req,res)=>{
     var img = fs.readFileSync(req.file.path);
     var encode_img = img.toString('base64');
     var final_img = {
         contentType:req.file.mimetype,
-        image:new Buffer(encode_img,'base64')
+        image:new Buffer.from(encode_img,'base64')
     };
     image.create(final_img,function(err,result){
         if(err){
@@ -95,6 +108,32 @@ router.post("/addItem",upload.single('image'),(req,res)=>{
         }
     })
 })
+*/
+
+/*
+router.post('/', upload.single('image'),(req, res, next) => {
+    console.log(req.file);
+    console.log(req.body);
+    var obj = {
+        name: req.body.name,
+        img: {
+            data: fs.readFileSync(path.join(__dirname + 'images' + req.file.filename)),
+            contentType: 'image/jpg'
+        }
+    }
+    imgModel.create(obj, (err, item) => {
+    console.log(obj); 
+
+        if (err) {
+            console.log('An error occurred', err);
+        }
+        else {
+            item.save();
+            res.redirect('/');
+        }
+    });
+    
+});
 */
 
 

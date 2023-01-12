@@ -36,6 +36,8 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCr
   .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
+
+
 // SET STORAGE
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -43,14 +45,19 @@ var storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         console.log(file);
-      cb(null, file.fieldname + '-' + Date.now())
+      cb(null, file.originalname)//fieldname + '-' + Date.now())
     }
   })
   var upload = multer({ storage: storage });
+  //var upload = multer({ dest: 'images/' })
+  //var image = require ("./models/Item/Item");
+
 
 var imgModel = require('./models/Item/Item');
 const { Console } = require('console');
 
+
+app.use(bodyParser.urlencoded({ extended:false }));
 
 app.get('/items', (req, res) => {
     imgModel.find({}, (err, items) => {
@@ -66,14 +73,16 @@ app.get('/items', (req, res) => {
 })
 
 
-
-app.post('/items', upload.single('image'),(req, res, next) => {
+/*
+app.post('/addItem', upload.single('image'),(req, res, next) => {
     console.log(req.file);
-    console.log(req.body);
+   
+    //console.log(req.body);
+
     var obj = {
         name: req.body.name,
         img: {
-            data: fs.readFileSync(path.join(__dirname + 'images' + req.file.filename)),
+            data: fs.readFileSync(path.join(__dirname + '/images/' + req.file.name)),
             contentType: 'image/jpg'
         }
     }
@@ -88,9 +97,9 @@ app.post('/items', upload.single('image'),(req, res, next) => {
             res.redirect('/');
         }
     });
-    
-});
 
+});
+*/
 
 
 /*
@@ -101,8 +110,10 @@ app.use(multer({ dest: './images',
 }));
 */
 
+
 /*
-app.post('/addItem', upload.single('image', async (req, res) => {
+app.post('/addItem', upload.single('image', async (req, res, next) => {
+    console.log(req.file);
     try {
         if(!req.file) {
             res.json({
@@ -128,6 +139,7 @@ app.post('/addItem', upload.single('image', async (req, res) => {
         res.status(500).send('Server Error')
     }
 }));
+
 */
 
 
@@ -146,7 +158,7 @@ app.post('/addItem',function(req,res){
 
 /*
 // testing post route
-app.post("/items",upload.single('image'),(req,res)=>{
+app.post("/addItem",upload.single('file'),(req,res)=>{
     console.log(req.file);
 
     var img = fs.readFileSync(req.file);
@@ -169,27 +181,50 @@ app.post("/items",upload.single('image'),(req,res)=>{
 });
 */
 
-/*
-app.post("/items",upload.single('image'),(req,res)=>{
-    console.log(req.body);
+
+app.put("/addItem",upload.single('image'),(req,res)=>{
+    console.log(req.body)
+    //console.log(req.body);
+    console.log(req.file);
     var img = fs.readFileSync(req.file.path);
 
 
     console.log(req.file.path);
+
     var encode_img = img.toString('base64');
     var final_img = {
         contentType:req.file.mimetype,
         image:new Buffer.from(encode_img,'base64')
     };
-    image.create(final_img,function(err,result){
-        if(err){
-            console.log(err);
-        }else{
-            console.log(result.img.Buffer);
+    //image.create(final_img,function(err,result){
+       // if(err){
+           // console.log(err);
+        //}else{
+            //console.log(result.img.Buffer);
             console.log("Saved To database");
             res.contentType(final_img.contentType);
             res.send(final_img.image);
         }
-    })
-})
-*/
+    //}
+    )
+//})
+
+
+/*
+app.post('/addItem', (req, res) => {
+    if (req.files === null) {
+    return res.status(400).json({ msg: 'No file uploaded' });
+    }
+    console.log(req.file);
+    const file = req.file;
+  
+    file(`${__dirname}/client/public/uploads/${file.name}`, err => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send(err);
+      }
+  
+      res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
+    });
+  });
+  */

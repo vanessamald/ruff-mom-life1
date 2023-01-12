@@ -37,6 +37,10 @@ class AddItem extends Component {
         this.setState({[e.target.name]:e.target.url});
         console.log(this.image.name)
         //console.log(image);
+        console.log(this.url)
+
+        const file = e.target.files[0]
+        console.log(file.name);
     }
 
     onSubmit = async (e) => {
@@ -50,6 +54,7 @@ class AddItem extends Component {
             price: this.state.price,
             inventory: this.state.inventory,
             image: this.image.name
+            //image: this.url
         }
 
         await this.props.addItem(newItem);
@@ -113,16 +118,18 @@ class AddItem extends Component {
                                 onChange={this.onChange}
                             />
                             <br/>
-                            
+                            <Form method="PUT" action="/addItem"
+                            encType= "multipart/form-data">
                             <Label for="image">Upload Image</Label>
                             <Input type="file" 
+                            
                             name="image" 
                             accept="image/*"
                             id= "image"
                             onChange= {this.setPhoto}
                             required
                             />
-                            
+                            </Form>
                             
                             <br/>
 
