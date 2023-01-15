@@ -9,6 +9,7 @@ import { addToCart } from '../actions/cartActions';
 import Products from './Products';
 import heroImage from '../images2/dog1.jpg'
 import About from './About';
+import Contact from './Contact';
 
 class Home extends Component {
 
@@ -46,7 +47,7 @@ class Home extends Component {
                 </div>
                 <About/>
             <Products/>
-            
+            <Contact/>
             </div>
     )}
 }

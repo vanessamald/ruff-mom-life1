@@ -64,7 +64,7 @@ code {
   height: auto;
   width: 540px;
   margin-left: 25%;
-  margin-right: 45px;
+  
 }
 
 .about-container {
@@ -79,4 +79,36 @@ code {
   flex-direction: column;
   margin-top: 500px;
   margin-left: 20px;
+}
+
+.contact-text-container {
+  margin-top: 50px;
+}
+
+.contact-image {
+  width: 95%;
+  height: auto;
+  text-align: center;
+  
+
+}
+
+.contact-text {
+  font-weight: bold;
+  margin-left: 50%;
+  font-size: 16px;
+}
+
+.contact-image-container {
+ 
+  
+}
+
+.contact-subtitle {
+  font-family: 'Cinzel';
+  font-size: 16px;
+}
+
+.contact-title {
+  font-size: 48px;
 }
