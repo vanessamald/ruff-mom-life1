@@ -5,6 +5,7 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Cart from './Cart';
 import Orders from './Order';
+import Products from './Products';
 
 class Main extends Component {
     render(){
@@ -13,6 +14,7 @@ class Main extends Component {
                 <Switch>
                     <Route path='/home'>
                         <Home/>
+                        
                     </Route>
                     <Route path='/addItem'>
                         <AddItem/>

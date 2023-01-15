@@ -36,195 +36,50 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCr
   .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
-
-
-// SET STORAGE
+// set storage for images
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'images')
+      cb(null, 'client/public/images')
     },
     filename: function (req, file, cb) {
         console.log(file);
-      cb(null, file.originalname)//fieldname + '-' + Date.now())
+      cb(null, file.originalname)
     }
   })
-  var upload = multer({ storage: storage });
-  //var upload = multer({ dest: 'images/' })
-  //var image = require ("./models/Item/Item");
+var upload = multer({ storage: storage });
 
+// schema for products
+var itemSchema = require('./models/Item/Item');
 
-var imgModel = require('./models/Item/Item');
-const { Console } = require('console');
-
-
-app.use(bodyParser.urlencoded({ extended:false }));
-
-app.get('/items', (req, res) => {
-    imgModel.find({}, (err, items) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send('An error has occurred', err);
-          }
-            else {
-              res.render('imagesPage', { items: items });
-            }
-        }
-    )
-})
-
-
-/*
 app.post('/addItem', upload.single('image'),(req, res, next) => {
+    console.log(req.body);
     console.log(req.file);
-   
-    //console.log(req.body);
-
-    var obj = {
-        name: req.body.name,
-        img: {
-            data: fs.readFileSync(path.join(__dirname + '/images/' + req.file.name)),
+    console.log('File uploaded!');
+    
+    var newItem = {
+        title: req.body.title,
+        description: req.body.description,
+        category: req.body.category,
+        price: req.body.price,
+        inventory: req.body.inventory,
+        image: req.file.filename
+        /*
+        image: {
+            data: fs.readFileSync(path.join(__dirname + '/client/public/images/'+ req.file.originalname )),
             contentType: 'image/jpg'
         }
+        */
     }
-    imgModel.create(obj, (err, item) => {
-    console.log(obj); 
+    // add to db
+    itemSchema.create(newItem, (err, item) => {
+    console.log(newItem); 
 
         if (err) {
             console.log('An error occurred', err);
         }
         else {
             item.save();
-            res.redirect('/');
+            res.redirect('/addItem');
         }
     });
-
 });
-*/
-
-
-/*
-app.use(multer({ dest: './images',
- rename: function (fieldname, filename) {
-   return filename;
- },
-}));
-*/
-
-
-/*
-app.post('/addItem', upload.single('image', async (req, res, next) => {
-    console.log(req.file);
-    try {
-        if(!req.file) {
-            res.json({
-                success: false,
-                message: 'You must provide an image'
-            });
-        } else {
-            let imageUploadObject = {
-                image: {
-                    data: req.file.buffer,
-                    contentType: req.file.mimetype
-                }
-               
-            };
-            const uploadObject = new
-            upload(imageUploadObject);
-
-            const uploadProcess = await uploadObject.save();
-        }
-        
-    } catch(error) {
-        console.log(error);
-        res.status(500).send('Server Error')
-    }
-}));
-
-*/
-
-
-
-
-/*
-app.post('/addItem',function(req,res){
-    var newItem = new Item();
-    newItem.image.data = fs.readFileSync(req.files.userPhoto.path)
-    newItem.image.contentType = 'image/png';
-    newItem.save();
-   });
-*/
-
-
-
-/*
-// testing post route
-app.post("/addItem",upload.single('file'),(req,res)=>{
-    console.log(req.file);
-
-    var img = fs.readFileSync(req.file);
-    console.log(img);
-    var encode_img = img.toString('base64');
-    var final_img = {
-        contentType:req.file.mimetype,
-        image:new Buffer.from(encode_img,'base64')
-    };
-    image.create(final_img,function(err,result){
-        if(err){
-            console.log(err);
-        }else{
-            console.log(result.img.Buffer);
-            console.log("Saved To database");
-            res.contentType(final_img.contentType);
-            res.send(final_img.image);
-        }
-    })
-});
-*/
-
-
-app.put("/addItem",upload.single('image'),(req,res)=>{
-    console.log(req.body)
-    //console.log(req.body);
-    console.log(req.file);
-    var img = fs.readFileSync(req.file.path);
-
-
-    console.log(req.file.path);
-
-    var encode_img = img.toString('base64');
-    var final_img = {
-        contentType:req.file.mimetype,
-        image:new Buffer.from(encode_img,'base64')
-    };
-    //image.create(final_img,function(err,result){
-       // if(err){
-           // console.log(err);
-        //}else{
-            //console.log(result.img.Buffer);
-            console.log("Saved To database");
-            res.contentType(final_img.contentType);
-            res.send(final_img.image);
-        }
-    //}
-    )
-//})
-
-
-/*
-app.post('/addItem', (req, res) => {
-    if (req.files === null) {
-    return res.status(400).json({ msg: 'No file uploaded' });
-    }
-    console.log(req.file);
-    const file = req.file;
-  
-    file(`${__dirname}/client/public/uploads/${file.name}`, err => {
-      if (err) {
-        console.error(err);
-        return res.status(500).send(err);
-      }
-  
-      res.json({ fileName: file.name, filePath: `/uploads/${file.name}` });
-    });
-  });
-  */

@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Upright&family=Roboto:wght@100&display=swap');
+
+* {
+  background-color: #F2EFE3;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Cinzel', serif;
+  font-family: 'Cormorant Upright', serif;
+  
+}
+
 body {
+  
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +21,62 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  font-family: 'Cinzel', serif;;
+  color: black;
+  
+}
+
+.home-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 500px;
+  margin-left: 20px;
+}
+
+.home-text {
+  font-size: 56px;
+ 
+}
+
+.subtext {
+  font-size: 24px
+}
+
+.hero-image {
+  height: auto;
+  width: 540px;
+  margin-left: 25%;
+}
+
+.about-text {
+  font-family: 'Cinzel';
+}
+
+.about-image{
+  height: auto;
+  width: 540px;
+  margin-left: 25%;
+  margin-right: 45px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 500px;
+  margin-left: 20px;
 }

@@ -6,6 +6,9 @@ import PropTypes from 'prop-types';
 import AppNavbar from './Navbar';
 
 class AddItem extends Component {
+
+    
+
     state = {
         title: '',
         description: '',
@@ -31,6 +34,8 @@ class AddItem extends Component {
         //console.log(this.image);
     }
 
+    
+/*
     setPhoto = (e) => {
         this.image = e.target.files[0] || e.dataTransfer.files[0];
         this.url = URL.createObjectURL(this.image);
@@ -41,6 +46,18 @@ class AddItem extends Component {
 
         const file = e.target.files[0]
         console.log(file.name);
+    }
+*/
+
+    handleImage(e) {
+        
+        if (e.target.files) {
+            const upload_image = e.target.files;
+            //const imageData = new ImageData();
+            //imageData.append('images', upload_image);
+
+            console.log(upload_image);
+        }
     }
 
     onSubmit = async (e) => {
@@ -55,6 +72,8 @@ class AddItem extends Component {
             inventory: this.state.inventory,
             image: this.image.name
             //image: this.url
+            //image: this.state.image
+            
         }
 
         await this.props.addItem(newItem);
@@ -70,7 +89,7 @@ class AddItem extends Component {
                 <Container>
                     <h2 className="text-center mb-3">Add a new Item</h2>
                     { this.props.isAuthenticated ?
-                    <Form onSubmit={this.onSubmit} action="/" encType="multipart/form-data" method="POST">
+                    <Form action="/addItem" encType="multipart/form-data" method="POST">
                         <FormGroup>
                             <Label for="title">Title</Label>
                             <Input
@@ -118,22 +137,24 @@ class AddItem extends Component {
                                 onChange={this.onChange}
                             />
                             <br/>
-                            <Form method="PUT" action="/addItem"
-                            encType= "multipart/form-data">
+
+                            
                             <Label for="image">Upload Image</Label>
                             <Input type="file" 
-                            
                             name="image" 
                             accept="image/*"
                             id= "image"
-                            onChange= {this.setPhoto}
+                            //onChange= {this.setPhoto}
+                            //onChange= {this.onChange}
+                            onChange= {this.handleImage}
                             required
                             />
-                            </Form>
+                            <Input type="submit" value="Upload Photo"  ></Input>
+                            
                             
                             <br/>
 
-                            <Button
+                            <Button 
                                 color="dark"
                                 style={{marginTop: '2rem'}}
                                 block

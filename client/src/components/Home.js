@@ -6,8 +6,13 @@ import { connect } from 'react-redux';
 import { getItems } from '../actions/itemActions';
 import { addToCart } from '../actions/cartActions';
 
+import Products from './Products';
+import heroImage from '../images2/dog1.jpg'
+import About from './About';
+
 class Home extends Component {
 
+   
     componentDidMount(){
         this.props.getItems();
     }
@@ -32,41 +37,22 @@ class Home extends Component {
         return (
             <div>
             <AppNavbar/>
-            <Container>
-                <div className="row">
-                {items.map((item)=>(
-                    
-                    <div className="col-md-4">
-                    <Card className="mb-4">
-                        <CardBody>
-                            <CardTitle tag="h5">{item.title}</CardTitle>
-
-                            <CardImg variant="top" src={item.image}>
-                            </CardImg>
-
-                            <p>{item.image}</p>
-
-                            <CardSubtitle tag="h6">Price: $ {item.price}</CardSubtitle>
-                            <CardText>{item.category}</CardText>
-                            {this.props.isAuthenticated ? 
-                                <Button
-                                    color="success"
-                                    size="sm"
-                                    onClick={this.onAddToCart.bind(this, user._id, item._id)}
-                                    >Add To Cart</Button> :
-                                    null}
-                        </CardBody>
-                    </Card>
+                <div className="flex-container">
+                    <div className="home-text-container">
+                    <p className="home-text">Pets are family</p>
+                    <p className="home-text subtext">Handmade pet accessories made with love</p>
                     </div>
-                ))}
-                 </div>
-            </Container>
+                    <img className="hero-image" src={heroImage}></img>
+                </div>
+                <About/>
+            <Products/>
+            
             </div>
-        )
-    }
+    )}
 }
 
 const mapStateToProps = (state) => ({
+    
     item: state.item,
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user
