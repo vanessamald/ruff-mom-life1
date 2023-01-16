@@ -4,9 +4,10 @@ import contactImage from '../images2/contact-image.jpg';
 function Contact() {
     return (
     <div className='contact-container'>
-        <div className="contact-image-container">
+
+        
         <img className="contact-image" src={contactImage}></img>
-        </div>
+        
         
         <div className="contact-text-container"> 
         <h2 className='contact-subtitle'>Ruff Mom Life</h2>

@@ -53,7 +53,7 @@ code {
 .hero-image {
   height: auto;
   width: 540px;
-  margin-left: 25%;
+  
 }
 
 .about-text {
@@ -63,7 +63,7 @@ code {
 .about-image{
   height: auto;
   width: 540px;
-  margin-left: 25%;
+  
   
 }
 
@@ -79,6 +79,10 @@ code {
   flex-direction: column;
   margin-top: 500px;
   margin-left: 20px;
+}
+
+.contact-container {
+  width: 100%;
 }
 
 .contact-text-container {
@@ -100,7 +104,7 @@ code {
 }
 
 .contact-image-container {
- 
+  width: 100%;
   
 }
 

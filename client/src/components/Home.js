@@ -10,6 +10,7 @@ import Products from './Products';
 import heroImage from '../images2/dog1.jpg'
 import About from './About';
 import Contact from './Contact';
+import Category from './Category';
 
 class Home extends Component {
 
@@ -45,8 +46,9 @@ class Home extends Component {
                     </div>
                     <img className="hero-image" src={heroImage}></img>
                 </div>
-                <About/>
-            <Products/>
+            <About/>
+            
+            
             <Contact/>
             </div>
     )}

@@ -8,32 +8,13 @@ module.exports.get_items = (req,res) => {
     Item.find().sort({date:-1}).then(items => res.json(items));
 }
 
+module.exports.get_category = (req, res) => {
+    Item.find().sort({category}).then(items => res.json(items));
+}
+
 module.exports.post_item = (req,res) => {
     const newItem = new Item(req.body);
-    //console.log(newItem);
-    //console.log(req.file);
     newItem.save().then(item => res.json(item));
-
-    /*
-    // testing
-    console.log(req.file);
-    var img = fs.readFileSync(req.file);
-    var encode_img = img.toString('base64');
-    var final_img = {
-        contentType:req.file.mimetype,
-        image:new Buffer.from(encode_img,'base64')
-    };
-    image.create(final_img,function(err,result){
-        if(err){
-            console.log(err);
-        }else{
-            console.log(result.img.Buffer);
-            console.log("Saved To database");
-            res.contentType(final_img.contentType);
-            res.send(final_img.image);
-        }
-    })
-    */
 }
 
 module.exports.update_item = (req,res) => {
