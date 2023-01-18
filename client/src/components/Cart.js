@@ -39,7 +39,7 @@ class Cart extends Component {
             this.getCartItems(user._id);
         }
         return(
-            <div>
+            <div >
                 <Navigation/>
                 {this.props.isAuthenticated ?
                     <Fragment>
@@ -52,7 +52,7 @@ class Cart extends Component {
         
             
                 {this.props.isAuthenticated && !this.props.cart.loading && this.state.loaded && this.props.cart.cart?
-                <Container>
+                <Container >
                     <div className="row">
                         {this.props.cart.cart.items.map((item)=>(
                             <div className="col-md-4">
@@ -61,7 +61,7 @@ class Cart extends Component {
                                 <CardTitle tag="h5">{item.name}</CardTitle>
                                 <CardSubtitle tag="h6">Price: ${item.price}</CardSubtitle>
                                 <CardText>Quantity: {item.quantity}</CardText>
-                                <Button color="danger" onClick={this.onDeleteFromCart.bind(this, user._id, item.productId)}>Delete</Button>
+                                <Button  onClick={this.onDeleteFromCart.bind(this, user._id, item.productId)}>Delete</Button>
                             </CardBody>
                         </Card>
                         <br/>
@@ -69,17 +69,18 @@ class Cart extends Component {
                         ))}
                         <div class="col-md-12">
                         <Card>
-                            <CardBody>
+                            <CardBody className='checkout'>
                                 <CardTitle tag="h5">Total Cost =  {this.props.cart.cart.bill}</CardTitle>
                                 <form action="/create-checkout-session" method="POST">
                                 <button
                                     type="submit"
                                     id="checkout-button"
+                                    className='button'
 
                                     user={user._id}
                                     amount={this.props.cart.cart.bill}
                                     checkout={this.props.checkout}
-                                /> 
+                                > Checkout</button>
                                 </form>                  
                             </CardBody>
                         </Card>

@@ -51,10 +51,13 @@ class Home extends Component {
                             </div>
                             <img className="home-image" src={heroImage}></img>
                         </div>
+
+                    <div className="home-container">
                         <About/>
+                        <Category/>
                         <Products/>
                         <Contact/>
-                
+                    </div>
             </div>
     )}
 }

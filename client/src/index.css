@@ -26,9 +26,9 @@ code {
 
 
 .flex-container {
+  
   display: flex;
   flex-direction: row;
-  
   margin-bottom: 100px;
 }
 
@@ -36,7 +36,7 @@ code {
   font-family: 'Cinzel', serif;;
   color: black;
   font-size: 24px;
-  width: 25%;
+  
   
 }
 
@@ -71,21 +71,20 @@ code {
   font-family: 'Cinzel';
 }
 
-.about-image{
+.about-image, .category-image{
   height: auto;
-  width: 540px;
-  
-  
+  width: 540px; 
 }
 
-.about-container {
+.about-container, .category-container {
   display: flex;
+
   flex-direction: row;
   margin-top: 100px;
   margin-bottom: 100px;
 }
 
-.about-text-container {
+.about-text-container, .category-text-container {
   display: flex;
   flex-direction: column;
   margin-top: 500px;
@@ -206,8 +205,13 @@ code {
   border-color: black;
 }
 
-.btn.btn-secondary .b:hover  {
-  background-color: gray;
+.btn.btn-secondary:hover {
+  background-color: #926b52;
+}
+  
+
+.b:hover  {
+  background-color: #926b52;
 }
 
 b{
@@ -217,7 +221,7 @@ b{
 .close-button {
   background: transparent;
   background-color: #A59B8D;
- 
+  
 }
 
 .modal-dialog  {
@@ -226,4 +230,17 @@ b{
   border: none;
 }
 
+.checkout {
+  text-align: center;
+}
+
+.card-body {
+  font-family: 'Cinzel';
+}
+
+
+
+.category-image {
+ 
+}
 

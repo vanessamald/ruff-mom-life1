@@ -88,10 +88,10 @@ function Navigation({ name, ...props }) {
                 
                    
                 </NavItem>
-                <button className="close-button"
+                <Button className="close-button"
                     onClick={handleClose}>
                     Close
-                </button>
+                </Button>
                    
             </Modal>
           </>

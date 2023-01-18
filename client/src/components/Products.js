@@ -6,8 +6,6 @@ import { connect } from 'react-redux';
 import { getItems } from '../actions/itemActions';
 import { addToCart } from '../actions/cartActions';
 
-
-
 class Products extends Component {
 
     componentDidMount(){
@@ -49,9 +47,6 @@ class Products extends Component {
                             {this.props.isAuthenticated ? 
                             
                                 <Button
-                                    type="submit"
-                                    id="checkout-button"
-
                                     color="success"
                                     size="sm"
                                     onClick={this.onAddToCart.bind(this, user._id, item._id)}
