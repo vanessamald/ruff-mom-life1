@@ -33,7 +33,7 @@ class Products extends Component {
         return (
             
             <div>
-            <h2>Shop All</h2>
+            <h2 className="shop-all-link">Shop All</h2>
             <Container>
             
                 <div className="row">  
@@ -49,11 +49,11 @@ class Products extends Component {
                             <CardText>{item.category}</CardText>
                             {this.props.isAuthenticated ? 
                             
-                                <Button
-                                    color="success"
+                                <button 
+                                    className="add-to-cart"
                                     size="sm"
                                     onClick={this.onAddToCart.bind(this, user._id, item._id)}
-                                    >Add To Cart</Button> :
+                                    >Add To Cart</button> :
                                     null}
                                     
                         </CardBody>

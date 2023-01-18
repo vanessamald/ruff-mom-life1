@@ -43,14 +43,16 @@ code {
   color: black;
   font-size: 20px;
   margin-left: 25px;
-  
-  
 }
 
 .title:hover {
   text-decoration: none;
   color: white;
 }
+
+.home-image {
+  float:right;
+ }
 
 .home-text-container {
   display: flex;
@@ -189,7 +191,30 @@ code {
   
 }
 
+.modal {
+  border: none;
+  background-color: #A59B8D;
+}
+
+.menu-links {
+  display:flex;
+  flex-direction: row;
+ 
+  background-color: #A59B8D;
+  padding: 0;
+  font-family: 'Cinzel';
+  border-width: 1px;
+  font-size: 12px;
+  
+}
+
+span.text-light {
+  background-color: #A59B8D;
+}
+
 .welcome-text {
+  margin-top: 50px;
+  margin-bottom: 50px;
   background-color: #A59B8D;
   font-family: 'Cinzel';
 }
@@ -200,8 +225,10 @@ code {
 
 .modal-content {
   background-color: #A59B8D;
-  
   margin:0%;
+  border: none;
+  border-radius: 0;
+  background-clip: none;
 }
 
 .navbar-text {
@@ -216,25 +243,41 @@ code {
 .btn.btn-secondary{
   background-color: #A59B8D;
   border-color: black;
+  border-radius: 0;
+  padding: 0px 25px;
 }
 
 .btn.btn-secondary:hover {
-  background-color: #926b52;
+  background-color: #A59B8D;
 }
+
+
   
 
 .b:hover  {
-  background-color: #926b52;
+  background-color: #A59B8D;
+}
+
+/* Modal btns */
+.text-dark {
+  background-color: #A59B8D;
 }
 
 b{
   background-color: #A59B8D;
+  font-family: 'Cinzel';
+  border-width: 1px;
+  font-size: 12px;
+  border-radius: 0;
 }
 
 .close-button {
-  background: transparent;
+  font-family: 'Cinzel';
+  border-width: 1px;
+  font-size: 12px;
   background-color: #A59B8D;
-  
+  padding: 10px 40px;
+  width:50%;
 }
 
 .modal-dialog  {
@@ -243,21 +286,31 @@ b{
   border: none;
 }
 
+/* Shop All Products Cards */
 .checkout {
   text-align: center;
 }
 
 .card-body {
   font-family: 'Cinzel';
+  text-align: center;
 }
 
+.card {
+  border: 0.01px;
+}
+
+.card-img {
+  margin-bottom: 25px;
+}
+/* Shop all ends */
+
+/* Category Carousel styling */
 .category-image-container, .home-image-container {
   width: 100%;
 }
 
-.home-image {
- float:right;
-}
+
 
 .category-image {
   float: left;
@@ -276,5 +329,23 @@ b{
   flex-direction: column;
   align-items: center;
   margin-top: 25vw;
-  
 }
+
+/*category carousel indicators */
+.carousel-indicators { visibility: hidden; }
+
+.carousel-control-next, .carousel-control-prev {
+  opacity: 0;
+}
+.shop-all-link {
+  margin-left: 25px;
+}
+
+.add-to-cart, .shopnow-button {
+  padding: 10px 50px;
+  font-size: 12px;
+  border-width: 1px;
+  font-family: 'Cinzel';
+}
+
+

@@ -52,6 +52,7 @@ function Navigation({ name, ...props }) {
                 <a href="/" className='title'>Life</a>
             </div>
         </div>
+       
             <Modal className="menu-modal" show={show} onHide={handleClose}
             
             style={{
@@ -59,12 +60,20 @@ function Navigation({ name, ...props }) {
                 marginLeft: "50%",
                 outline: "none"
             }} >
+            
+                <div className="menu-links">
+               
+                <RegisterModal/>
                 {isAuthenticated ? (
                 <Logout/>
                     ) : (
                 <LoginModal/> 
             )}
-                
+                <button className="close-button"
+                    onClick={handleClose}>
+                    Close
+                </button> 
+               </div>
                 <NavItem>
                     
                         <p className="welcome-text">{ user ? `Welcome ${user.name}!` : ''}</p>
@@ -93,12 +102,10 @@ function Navigation({ name, ...props }) {
                 
                    
                 </NavItem>
-                <Button className="close-button"
-                    onClick={handleClose}>
-                    Close
-                </Button>
-                   
+                
+                
             </Modal>
+            
           </>
         );
       }

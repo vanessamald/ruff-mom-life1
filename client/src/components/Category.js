@@ -19,7 +19,7 @@ class Category extends Component {
        
     return ( 
 <Carousel>
-<Carousel.Item>
+<Carousel.Item interval={5000}>
 
 <div className='category-container'>
 
@@ -35,7 +35,7 @@ class Category extends Component {
     </div>
 
 </Carousel.Item>
-<Carousel.Item>
+<Carousel.Item interval={5000}>
     
 <div className='category-container'>
 
@@ -51,7 +51,7 @@ class Category extends Component {
     </div>
 
 </Carousel.Item>
-<Carousel.Item>
+<Carousel.Item interval={5000}>
     
 <div className='category-container'>
 
