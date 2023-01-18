@@ -7,6 +7,8 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 const multer = require("multer");
 
+const stripe = require('stripe')('sk_test_51MCY4pF6W7cW2wOEHezDjpKzIS6S6791WUIggtWJNkhXS4aWltmf5VNEppJvBU0OemSiNetCUbcItQ0LqSocIR0c00FH2kLUHx');
+
 const authRoutes = require('./routes/auth');
 const itemRoutes = require('./routes/item');
 const cartRoutes = require('./routes/cart');
@@ -83,3 +85,21 @@ app.post('/addItem', upload.single('image'),(req, res, next) => {
         }
     });
 });
+
+app.post('/create-checkout-session', async (req, res) => {
+    const session = await stripe.checkout.sessions.create({
+      line_items: [
+        {
+          // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+          price: 'price_1MRRqNF6W7cW2wOEbjB9iYSb',
+          quantity: 1,
+        },
+      ],
+      mode: 'payment',
+      success_url: `http://localhost:${port}/success.html`,
+      cancel_url: `http://localhost:${port}/cancel.html`,
+      //automatic_tax: {enabled: true},
+    });
+  
+    res.redirect(303, session.url);
+  });

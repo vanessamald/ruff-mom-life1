@@ -105,4 +105,7 @@ dist
 
 config/default.json 
 
+.env
+
+dotenv
 

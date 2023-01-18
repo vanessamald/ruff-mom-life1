@@ -76,7 +76,7 @@ class LoginModal extends Component {
     render(){
         return(
             <div className="container">
-                <Button color="success" className="btn btn-sm"><NavLink onClick={this.toggle} href="#"><span className="text-dark"><b>Login</b></span></NavLink></Button>
+                <Button  ><NavLink onClick={this.toggle} href="#"><span className="text-dark"><b>Login</b></span></NavLink></Button>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -107,7 +107,7 @@ class LoginModal extends Component {
                                     onChange={this.onChange}
                                 />
                                 <Button
-                                    color="dark"
+                                    
                                     style={{marginTop: '2rem'}}
                                     block
                                 >Login</Button>

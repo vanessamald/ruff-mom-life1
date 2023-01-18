@@ -47,12 +47,17 @@ class Products extends Component {
                             <CardSubtitle tag="h6">Price: $ {item.price}</CardSubtitle>
                             <CardText>{item.category}</CardText>
                             {this.props.isAuthenticated ? 
+                            
                                 <Button
+                                    type="submit"
+                                    id="checkout-button"
+
                                     color="success"
                                     size="sm"
                                     onClick={this.onAddToCart.bind(this, user._id, item._id)}
                                     >Add To Cart</Button> :
                                     null}
+                                    
                         </CardBody>
                     </Card>
                     </div>

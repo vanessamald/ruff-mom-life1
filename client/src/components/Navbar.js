@@ -72,13 +72,15 @@ class AppNavbar extends Component {
             
             <>
             {[false].map((expand) => (
-            <Navbar key={expand}  expand={expand}  className="mb-3">
+            <Navbar key={expand}  expand={false}  className="mb-3">
           
             <Navbar.Brand href="#">Ruff Mom Life</Navbar.Brand>
 
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
 
                 <Container fluid>
+
+
 
                 <Navbar.Offcanvas  
                     id={`offcanvasNavbar-expand-${expand}`}
@@ -94,12 +96,17 @@ class AppNavbar extends Component {
                     <Nav className="justify-content-end flex-grow-1 pe-3">
                         <Nav.Link href="#action1">Home</Nav.Link>
                         <Nav.Link href="#action2">Link</Nav.Link>
-                        <Nav.Link><RegisterModal/></Nav.Link>
-                        <Nav.Link><LoginModal/></Nav.Link>
+                        
                         <NavDropdown
                             title="Dropdown"
                             id={`offcanvasNavbarDropdown-expand-${expand}`}
                         >
+                              <NavItem>
+                    <RegisterModal/>
+                </NavItem>
+                <NavItem>
+                    <LoginModal/>
+                </NavItem>
                             <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
                             <NavDropdown.Divider />
@@ -117,6 +124,9 @@ class AppNavbar extends Component {
                         </Form>
                 </Offcanvas.Body>
             </Navbar.Offcanvas>
+
+
+            
           </Container>
         </Navbar>
         ))}

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { getCart, deleteFromCart } from '../actions/cartActions';
 import Checkout from './Checkout';
 import { checkout } from '../actions/orderActions';
+import Navigation from './Navigation';
 
 class Cart extends Component {
 
@@ -39,7 +40,7 @@ class Cart extends Component {
         }
         return(
             <div>
-                <AppNavbar/>
+                <Navigation/>
                 {this.props.isAuthenticated ?
                     <Fragment>
                         {this.props.cart.cart ? null :
@@ -70,11 +71,16 @@ class Cart extends Component {
                         <Card>
                             <CardBody>
                                 <CardTitle tag="h5">Total Cost =  {this.props.cart.cart.bill}</CardTitle>
-                                <Checkout
+                                <form action="/create-checkout-session" method="POST">
+                                <button
+                                    type="submit"
+                                    id="checkout-button"
+
                                     user={user._id}
                                     amount={this.props.cart.cart.bill}
                                     checkout={this.props.checkout}
-                                />                   
+                                /> 
+                                </form>                  
                             </CardBody>
                         </Card>
                         </div>

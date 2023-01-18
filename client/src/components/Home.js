@@ -11,6 +11,9 @@ import heroImage from '../images2/dog1.jpg'
 import About from './About';
 import Contact from './Contact';
 import Category from './Category';
+import Navigation from './Navigation';
+import { PaymentForm } from 'react-square-web-payments-sdk';
+
 
 class Home extends Component {
 
@@ -38,18 +41,20 @@ class Home extends Component {
 
         return (
             <div>
-            <AppNavbar/>
-                <div className="flex-container">
-                    <div className="home-text-container">
-                    <p className="home-text">Pets are family</p>
-                    <p className="home-text subtext">Handmade pet accessories made with love</p>
-                    </div>
-                    <img className="hero-image" src={heroImage}></img>
-                </div>
-            <About/>
-            
-            
-            <Contact/>
+               
+                    <Navigation/>
+                    
+                        <div className="flex-container">
+                            <div className="home-text-container">
+                                <p className="home-text">Pets are family</p>
+                                <p className="home-text subtext">Handmade pet accessories made with love</p>
+                            </div>
+                            <img className="home-image" src={heroImage}></img>
+                        </div>
+                        <About/>
+                        <Products/>
+                        <Contact/>
+                
             </div>
     )}
 }

@@ -23,22 +23,33 @@ code {
     monospace;
 }
 
+
+
 .flex-container {
   display: flex;
   flex-direction: row;
+  
+  margin-bottom: 100px;
 }
 
 .title {
   font-family: 'Cinzel', serif;;
   color: black;
+  font-size: 24px;
+  width: 25%;
   
+}
+
+.title:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .home-text-container {
   display: flex;
   flex-direction: column;
   margin-top: 500px;
-  margin-left: 20px;
+  
 }
 
 .home-text {
@@ -50,7 +61,7 @@ code {
   font-size: 24px
 }
 
-.hero-image {
+.home-image {
   height: auto;
   width: 540px;
   
@@ -90,7 +101,7 @@ code {
 }
 
 .contact-image {
-  width: 95%;
+  width: 100%;
   height: auto;
   text-align: center;
   
@@ -116,3 +127,103 @@ code {
 .contact-title {
   font-size: 48px;
 }
+
+.nav-link {
+  color: black;
+  font-family: 'Cinzel';
+  
+}
+
+.nav-link:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-item {
+  list-style-type: none;
+  text-align: center;
+  background-color: #A59B8D;
+}
+
+.nav-container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
+}
+
+.dropdown {
+  font-family: 'Cinzel';
+  background-color: #A59B8D;
+}
+
+.btn-primary {
+  color: black;
+  background-color: thistle;
+}
+
+.btn-primary:hover {
+ 
+}
+
+
+.menu-btn {
+  float: right;
+}
+
+.menu-modal{
+  background-color: #A59B8D;
+  
+}
+
+.welcome-text {
+  background-color: #A59B8D;
+  font-family: 'Cinzel';
+}
+
+
+
+
+
+.modal-content {
+  background-color: #A59B8D;
+  
+  margin:0%;
+}
+
+.navbar-text {
+  background-color: #A59B8D;
+}
+
+/* Login Button */
+.container {
+  background-color: #A59B8D;
+}
+
+.btn.btn-secondary{
+  background-color: #A59B8D;
+  border-color: black;
+}
+
+.btn.btn-secondary .b:hover  {
+  background-color: gray;
+}
+
+b{
+  background-color: #A59B8D;
+}
+
+.close-button {
+  background: transparent;
+  background-color: #A59B8D;
+ 
+}
+
+.modal-dialog  {
+  background-color: #A59B8D;
+  margin: none !important;
+  border: none;
+}
+
+
