@@ -42,10 +42,15 @@ function Navigation({ name, ...props }) {
         return (
           <>
         <div className="nav-container">
-          <a href="/" className='title'>Ruff Mom Life</a>
+            
             <button onClick={handleShow} className='menu-btn'
             >Menu
             </button>
+            <div className="title-container">
+                <a href="/" className='title'>Ruff</a>
+                <a href="/" className='title'>Mom</a>
+                <a href="/" className='title'>Life</a>
+            </div>
         </div>
             <Modal className="menu-modal" show={show} onHide={handleClose}
             

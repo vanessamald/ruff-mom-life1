@@ -29,8 +29,9 @@ class Category extends Component {
             <p>100% cotton handmade Bandanas</p>
             <button className='shopnow-button'>Shop now</button>
         </div>
-
+        <div className="category-image-container">
         <img className='category-image' src={dogCategory}></img>
+        </div>
     </div>
 
 </Carousel.Item>
@@ -44,8 +45,9 @@ class Category extends Component {
             <p>100% cotton T-shirts</p>
             <button className='shopnow-button'>Shop now</button>
         </div>
-
+        <div className="category-image-container">
         <img className='category-image' src={fromme}></img>
+        </div>
     </div>
 
 </Carousel.Item>
@@ -59,8 +61,9 @@ class Category extends Component {
             <p>Accessories</p>
             <button className='shopnow-button'>Shop now</button>
         </div>
-
+        <div className="category-image-container">
         <img className='category-image' src={justBecause}></img>
+        </div>
     </div>
    
 </Carousel.Item>

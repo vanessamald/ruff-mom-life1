@@ -49,12 +49,15 @@ class Home extends Component {
                                 <p className="home-text">Pets are family</p>
                                 <p className="home-text subtext">Handmade pet accessories made with love</p>
                             </div>
+                            <div className="home-image-container">
                             <img className="home-image" src={heroImage}></img>
+                            </div>
                         </div>
 
                     <div className="home-container">
+                    <Category/>
                         <About/>
-                        <Category/>
+                        
                         <Products/>
                         <Contact/>
                     </div>

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getItems } from '../actions/itemActions';
 import { addToCart } from '../actions/cartActions';
+import Dropdown from 'react-bootstrap/Dropdown';
 
 class Products extends Component {
 
@@ -32,9 +33,11 @@ class Products extends Component {
         return (
             
             <div>
-            
+            <h2>Shop All</h2>
             <Container>
-                <div className="row">    
+            
+                <div className="row">  
+                 
                 {items.map((item)=>(
                     <div className="col-md-4">
                     <Card className="mb-4">
