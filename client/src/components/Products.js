@@ -32,7 +32,7 @@ class Products extends Component {
 
         return (
             
-            <div>
+            <div className="shop-all-container">
             <h2 className="shop-all-link">Shop All</h2>
             <Container>
             

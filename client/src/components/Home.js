@@ -13,6 +13,8 @@ import Contact from './Contact';
 import Category from './Category';
 import Navigation from './Navigation';
 import { PaymentForm } from 'react-square-web-payments-sdk';
+import Footer from './Footer';
+
 
 
 class Home extends Component {
@@ -60,6 +62,7 @@ class Home extends Component {
                         
                         <Products/>
                         <Contact/>
+                        <Footer/>
                     </div>
             </div>
     )}

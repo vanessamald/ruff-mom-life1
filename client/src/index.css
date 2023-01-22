@@ -130,82 +130,31 @@ code {
 .contact-subtitle {
   font-family: 'Cinzel';
   font-size: 16px;
+  margin-left: 25px;
 }
 
 .contact-title {
   font-size: 48px;
+  margin-left: 25px;
 }
 
-.nav-link {
+.btn.btn-primary {
   color: black;
-  font-family: 'Cinzel';
-  
-}
-
-.nav-link:hover {
-  text-decoration: none;
-  color: white;
-}
-
-.nav-item {
-  list-style-type: none;
-  text-align: center;
-  background-color: #A59B8D;
-}
-
-.nav-container {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  
-}
-
-.dropdown {
-  font-family: 'Cinzel';
-  background-color: #A59B8D;
-}
-
-.btn-primary {
-  color: black;
-  background-color: thistle;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .btn-primary:hover {
  
 }
 
-
-.menu-btn {
-  float: right;
-  margin-right: 25px;
-  font-family: 'Cinzel';
-  border-width: 1px;
-  font-size: 12px;
-  margin-top: 20px;
-  padding: 10px 100px;
-}
-
-.menu-modal{
-  background-color: #A59B8D;
-  
+.modal-backdrop {
+  background-color: transparent;
 }
 
 .modal {
   border: none;
   background-color: #A59B8D;
-}
-
-.menu-links {
-  display:flex;
-  flex-direction: row;
- 
-  background-color: #A59B8D;
-  padding: 0;
-  font-family: 'Cinzel';
-  border-width: 1px;
-  font-size: 12px;
-  
 }
 
 span.text-light {
@@ -218,10 +167,6 @@ span.text-light {
   background-color: #A59B8D;
   font-family: 'Cinzel';
 }
-
-
-
-
 
 .modal-content {
   background-color: #A59B8D;
@@ -303,6 +248,10 @@ b{
 .card-img {
   margin-bottom: 25px;
 }
+
+.shop-all-container {
+  margin-bottom: 100px;
+}
 /* Shop all ends */
 
 /* Category Carousel styling */
@@ -347,5 +296,74 @@ b{
   border-width: 1px;
   font-family: 'Cinzel';
 }
+
+/*
+.footer {
+  width: 100%;
+  transition: width 2s;
+  background: pink;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+.footer:hover {
+  width: 300px;
+}
+*/
+
+/* Testing Menu Div */
+.hidden-menu {
+  visibility: hidden;
+}
+
+.menu-btn {
+  float: right;
+  margin-right: 25px;
+  font-family: 'Cinzel';
+  border-width: 1px;
+  font-size: 12px;
+  margin-top: 20px;
+  padding: 10px 100px;
+}
+
+.menu-content {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+
+  
+}
+/*
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+*/
+
+.menu-content a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+}
+
+
+.menu-content a:hover, .menu-content a:focus {
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
 
 

@@ -5,6 +5,7 @@ import Main from './components/Main';
 import store from './store';
 import {loadUser} from './actions/authActions';
 import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   componentDidMount(){

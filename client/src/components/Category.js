@@ -14,10 +14,18 @@ import Carousel from 'react-bootstrap/Carousel';
 class Category extends Component {
 
 //function Category(items) {
+   
     
+
     render(){
-       
+        const handleClick = () => {
+            console.log('HELLO WORLD')
+          }
+
     return ( 
+    
+       
+
 <Carousel>
 <Carousel.Item interval={5000}>
 
@@ -59,7 +67,7 @@ class Category extends Component {
             
             <h2 className="category-name">Just because</h2>
             <p>Accessories</p>
-            <button className='shopnow-button'>Shop now</button>
+            <button onClick={handleClick} className='shopnow-button'>Shop now</button>
         </div>
         <div className="category-image-container">
         <img className='category-image' src={justBecause}></img>
@@ -76,5 +84,6 @@ const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user
 })
+
 
 export default connect(mapStateToProps, {getItems})(Category);
