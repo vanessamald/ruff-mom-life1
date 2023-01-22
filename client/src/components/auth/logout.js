@@ -12,9 +12,9 @@ export class Logout extends Component {
 
     render() {
         return (
-            <div>
-                <Fragment>
-                    <Button><NavLink onClick={this.props.logout} href="#"><span className="text-light"><b>Logout</b></span></NavLink></Button>
+            <div className="user-links">
+                <Fragment className="user-links">
+                    <a className='user-links' onClick={this.props.logout} href="#">Logout</a>
                 </Fragment>
             </div>
         )

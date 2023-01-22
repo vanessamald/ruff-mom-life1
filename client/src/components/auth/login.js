@@ -75,8 +75,8 @@ class LoginModal extends Component {
 
     render(){
         return(
-            <div className="container">
-                <Button  ><NavLink onClick={this.toggle} href="#"><span className="text-dark"><b>Login</b></span></NavLink></Button>
+            <div className='user-links'>
+                <a  className="user-links" onClick={this.toggle} href="#">Login</a>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}

@@ -5,7 +5,6 @@
   font-family: 'Roboto', sans-serif;
   font-family: 'Cinzel', serif;
   font-family: 'Cormorant Upright', serif;
-  
 }
 
 body {
@@ -161,13 +160,6 @@ span.text-light {
   background-color: #A59B8D;
 }
 
-.welcome-text {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background-color: #A59B8D;
-  font-family: 'Cinzel';
-}
-
 .modal-content {
   background-color: #A59B8D;
   margin:0%;
@@ -181,40 +173,9 @@ span.text-light {
 }
 
 /* Login Button */
-.container {
-  background-color: #A59B8D;
-}
-
-.btn.btn-secondary{
-  background-color: #A59B8D;
-  border-color: black;
-  border-radius: 0;
-  padding: 0px 25px;
-}
-
-.btn.btn-secondary:hover {
-  background-color: #A59B8D;
-}
-
-
-  
-
-.b:hover  {
-  background-color: #A59B8D;
-}
 
 /* Modal btns */
-.text-dark {
-  background-color: #A59B8D;
-}
 
-b{
-  background-color: #A59B8D;
-  font-family: 'Cinzel';
-  border-width: 1px;
-  font-size: 12px;
-  border-radius: 0;
-}
 
 .close-button {
   font-family: 'Cinzel';
@@ -310,7 +271,7 @@ b{
 }
 */
 
-/* Testing Menu Div */
+/* Menu Styling*/
 .hidden-menu {
   visibility: hidden;
 }
@@ -326,6 +287,8 @@ b{
 }
 
 .menu-content {
+  padding-top: 100px;
+  padding-bottom: 100px;
   height: 100%;
   width: 100%;
   position: fixed;
@@ -349,13 +312,14 @@ b{
 }
 */
 
-.menu-content a {
+.menu-content a, .btn.btn-secondary{
   padding: 8px;
+  font-family: 'Roboto';
   text-decoration: none;
-  font-size: 36px;
+  font-size: 24px;
   color: #818181;
   display: block;
-  transition: 0.3s;
+  transition: 3s;
   text-align: center;
 }
 
@@ -365,5 +329,24 @@ b{
   text-decoration: none;
 }
 
+.user-links {
+  background-color: transparent;
+}
+
+.menu-close {
+  color: white;
+  text-align: center;
+  font-size: 12px;
+
+}
+
+.welcome-text {
+  text-align: center;
+  font-size: 48px;
+  font-family: 'Cormorant Upright', serif;
+  color: white;
+}
+
+/* Menu Styling Ends */
 
 

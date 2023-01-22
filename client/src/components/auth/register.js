@@ -74,14 +74,12 @@ class RegisterModal extends Component {
 
         // Attempt to register
         this.props.register(newUser);
-
-
     }
 
     render(){
         return(
-            <div className="container">
-                <Button><NavLink onClick={this.toggle} href="#"><span className=""><b>Register</b></span></NavLink></Button>
+            <div className="user-links">
+                <a className="user-links"><NavLink onClick={this.toggle} href="#">Register</NavLink></a>
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}

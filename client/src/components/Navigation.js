@@ -6,6 +6,8 @@ import Logout from './auth/logout';
 import LoginModal from './auth/login';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Container from 'react-bootstrap/Container';
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -29,12 +31,16 @@ function Navigation({ name, ...props }) {
         
         const { isAuthenticated, user } = props.auth;
         const [style, setStyle] = useState("hidden-menu");
-
+    
         const changeStyle = () => {
             console.log("you just clicked");
             setStyle("menu-content");
-    };
-   
+        };
+
+        const closeMenu = () => {
+            setStyle("hidden-menu");
+        }
+
     return (
         <>
     <div className="nav-container">
@@ -47,26 +53,26 @@ function Navigation({ name, ...props }) {
             Menu
         </button>
         <div className={style} >
-                <RegisterModal/>
+
+                <RegisterModal />
                     {isAuthenticated ? (
-                    <Logout/>
+                    <Logout />
                     ) : (
                     <LoginModal/> 
                     )}
-
-                <p className="">{ user ? `Welcome ${user.name}!` : ''}</p>
-
-                <a className="" href="/">Menu item</a>
+       
+                <p className="user-links welcome-text">{ user ? `Welcome ${user.name}!` : ''}</p>
+    
+                <a className="" href="/">Shop</a>
                 <a className="" here="/">Menu item</a>
                 <a className="" href="/">Menu item</a>
                 <a className="" href="/orders">Orders</a>
                 <a className="" href="/cart">Cart</a>
-                <a href="" className="">Close</a>
-
-                <button className=""
-                    onClick={handleClose}>
+               
+                <a className="user-links menu-close"
+                    onClick={closeMenu}>
                     Close
-                </button> 
+                </a> 
                </div>
         </div>
     </>
