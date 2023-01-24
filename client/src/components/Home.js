@@ -58,12 +58,8 @@ class Home extends Component {
                 <div className='paw-print-container'>
                     <img className="paw-print-4" src={pawPrint}></img>
                 </div>
-                <div className='paw-print-container'>
-                    <img className="paw-print-5" src={pawPrint}></img>
-                </div>
-                <div className='paw-print-container'>
-                    <img className="paw-print-6" src={pawPrint}></img>
-                </div>
+                
+               
                
                     <Navigation/>
                     

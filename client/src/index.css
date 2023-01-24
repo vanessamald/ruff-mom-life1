@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Upright&family=Roboto:wght@100&display=swap');
 
 * {
-  /*
   background-color: #F2EFE3;
+  /*
+  
   */
   font-family: 'Roboto', sans-serif;
   font-family: 'Cinzel', serif;
@@ -27,7 +28,6 @@ code {
 
 
 .flex-container {
-  margin-top:50px;
   display: flex;
   flex-direction: row;
   margin-bottom: 100px;
@@ -276,16 +276,22 @@ span.text-light {
 /* Menu Styling*/
 .hidden-menu {
   visibility: hidden;
+  height: 0px;
 }
 
 .menu-btn {
+  margin-left: 75vw;
   float: right;
   margin-right: 25px;
   font-family: 'Cinzel';
   border-width: 1px;
   font-size: 12px;
   margin-top: 20px;
+  height: 25px;
+  width: 250px;
+  /*
   padding: 10px 100px;
+  */
 }
 
 .menu-content {
@@ -301,8 +307,12 @@ span.text-light {
   background-color: rgba(0,0,0, 0.9);
   overflow-x: hidden;
   transition: 0.5s;
+}
 
-  
+.nav-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 /*
 .overlay-content {
@@ -365,88 +375,94 @@ span.text-light {
 .paw-print-1 {
   width: auto;
   height: 236px;
+  /*
   z-index: -1;
+  */
   opacity: 0;
   position: absolute;
   left: 75px;
-  top: 300px;
+  top: 0px;
   transform: rotate(-40deg);
   -webkit-animation: walk 3s linear infinite;
-  animation: /*keyframe*/walk /*duration*/3s /*transition*/linear infinite/*repeat*/ 2s;
+  animation: walk 3s linear 2s;
   animation-fill-mode: forwards;
+  background-color: transparent;
 }
 
 .paw-print-2 {
   width: auto;
   height: 236px;
-  z-index: -1;
+ 
   opacity: 0;
   position: absolute;
   left: 200px;
-  top: 500px;
+  top: 200px;
   transform: rotate(-45deg); 
-  -webkit-animation: walk 3s linear infinite 0.25s;
-  animation: walk 3s linear infinite /*delay*/1.50s;
+  -webkit-animation: walk 3s linear  0.25s;
+  animation: walk 3s linear 1.50s;
   animation-fill-mode: forwards;
+  background-color: transparent;
 }
 
 .paw-print-3 {
   width: auto;
   height: 236px;
-  z-index: -1;
+  
   opacity: 0;
   position: absolute;
   left: 375px;
-  top: 800px;
+  top: 400px;
   transform: rotate(-10deg); 
-  -webkit-animation: walk 3s linear infinite 1s;
-  animation: walk 3s linear infinite 1.25s;
+  -webkit-animation: walk 3s linear 1s;
+  animation: walk 3s linear 1.25s;
   animation-fill-mode: forwards;
+  background-color: transparent;
 } 
 
 .paw-print-4 {
   width: auto;
   height: 236px;
-  z-index: -1;
+  
   opacity: 0;
   position: absolute;
   left: 400px;
-  top: 1050px;
+  top: 600px;
   transform: rotate(-20deg); 
-  -webkit-animation: walk 3s linear infinite 1.50s;
-  animation: walk 3s linear infinite 1s;
+  -webkit-animation: walk 3s linear  1.50s;
+  animation: walk 3s linear  1s;
   animation-fill-mode: forwards;
+  background-color: transparent;
 }
 
-   
+/*  
 .paw-print-5 {
   width: auto;
   height: 236px;
-  z-index: -1;
   opacity: 0;
   position: absolute;
   left: 725px;
-  top: 200px;
+  top: 50px;
   transform: rotate(10deg); 
   -webkit-animation: walk 3s linear infinite 1.75s;
   animation: walk 3s linear infinite 0.75s;
   animation-fill-mode: forwards;
+  background-color: transparent;
 }
  
 .paw-print-6 {
   width: auto;
   height: 236px;
-  z-index: -1;
   opacity: 0;
   position: absolute;
   left: 650px;
-  top: 400px;
+  top: 250px;
   transform: rotate(10deg); 
   -webkit-animation: walk 3s linear infinite 2s;
   animation: walk 3s linear infinite 0.25s;
   animation-fill-mode: forwards;
-
+  background-color: transparent;
 }
+*/
     
 @keyframes walk {
   /* appear */

@@ -43,6 +43,7 @@ function Navigation({ name, ...props }) {
 
     return (
         <>
+    <div>
     <div className="nav-container">
         <div className="title-container">
             <a href="/" className='title'>Ruff</a>
@@ -52,6 +53,7 @@ function Navigation({ name, ...props }) {
         <button className="menu-btn" onClick={changeStyle}>
             Menu
         </button>
+    </div>
         <div className={style} >
 
                 <RegisterModal />
