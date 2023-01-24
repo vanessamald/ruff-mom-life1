@@ -15,7 +15,7 @@ import Navigation from './Navigation';
 import { PaymentForm } from 'react-square-web-payments-sdk';
 import Footer from './Footer';
 
-
+import pawPrint from '../images2/dog-paws.png'
 
 class Home extends Component {
 
@@ -42,11 +42,34 @@ class Home extends Component {
         const user = this.props.user;
 
         return (
-            <div>
+            <div style={{
+                
+            }}>
+              
+                <div className='paw-print-container'>
+                    <img className="paw-print-1" src={pawPrint}></img>
+                </div>
+                <div className='paw-print-container'>
+                    <img className="paw-print-2" src={pawPrint}></img>
+                </div>
+                <div className='paw-print-container'>
+                    <img className="paw-print-3" src={pawPrint}></img>
+                </div>
+                <div className='paw-print-container'>
+                    <img className="paw-print-4" src={pawPrint}></img>
+                </div>
+                <div className='paw-print-container'>
+                    <img className="paw-print-5" src={pawPrint}></img>
+                </div>
+                <div className='paw-print-container'>
+                    <img className="paw-print-6" src={pawPrint}></img>
+                </div>
                
                     <Navigation/>
                     
-                        <div className="flex-container">
+                        <div className="flex-container" style={{
+                           
+                        }}>
                             <div className="home-text-container">
                                 <p className="home-text">Pets are family</p>
                                 <p className="home-text subtext">Handmade pet accessories made with love</p>

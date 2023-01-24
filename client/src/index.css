@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Upright&family=Roboto:wght@100&display=swap');
 
 * {
+  /*
   background-color: #F2EFE3;
+  */
   font-family: 'Roboto', sans-serif;
   font-family: 'Cinzel', serif;
   font-family: 'Cormorant Upright', serif;
@@ -349,4 +351,114 @@ span.text-light {
 
 /* Menu Styling Ends */
 
+/* Dog Paw Animation */ 
+.paw-print-container {
+  background-color: transparent;
+  width: 25px;
+  
+}
+
+.paw-print-image {
+  
+}
+
+.paw-print-1 {
+  width: auto;
+  height: 236px;
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  left: 75px;
+  top: 300px;
+  transform: rotate(-40deg);
+  -webkit-animation: walk 3s linear infinite;
+  animation: /*keyframe*/walk /*duration*/3s /*transition*/linear infinite/*repeat*/ 2s;
+  animation-fill-mode: forwards;
+}
+
+.paw-print-2 {
+  width: auto;
+  height: 236px;
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  left: 200px;
+  top: 500px;
+  transform: rotate(-45deg); 
+  -webkit-animation: walk 3s linear infinite 0.25s;
+  animation: walk 3s linear infinite /*delay*/1.50s;
+  animation-fill-mode: forwards;
+}
+
+.paw-print-3 {
+  width: auto;
+  height: 236px;
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  left: 375px;
+  top: 800px;
+  transform: rotate(-10deg); 
+  -webkit-animation: walk 3s linear infinite 1s;
+  animation: walk 3s linear infinite 1.25s;
+  animation-fill-mode: forwards;
+} 
+
+.paw-print-4 {
+  width: auto;
+  height: 236px;
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  left: 400px;
+  top: 1050px;
+  transform: rotate(-20deg); 
+  -webkit-animation: walk 3s linear infinite 1.50s;
+  animation: walk 3s linear infinite 1s;
+  animation-fill-mode: forwards;
+}
+
+   
+.paw-print-5 {
+  width: auto;
+  height: 236px;
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  left: 725px;
+  top: 200px;
+  transform: rotate(10deg); 
+  -webkit-animation: walk 3s linear infinite 1.75s;
+  animation: walk 3s linear infinite 0.75s;
+  animation-fill-mode: forwards;
+}
+ 
+.paw-print-6 {
+  width: auto;
+  height: 236px;
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  left: 650px;
+  top: 400px;
+  transform: rotate(10deg); 
+  -webkit-animation: walk 3s linear infinite 2s;
+  animation: walk 3s linear infinite 0.25s;
+  animation-fill-mode: forwards;
+
+}
+    
+@keyframes walk {
+  /* appear */
+  25%  {
+    opacity: 1;
+  }
+  50% {
+    opacity:0.75;
+  }
+  /* disappear */
+  100% {
+    opacity: 0;
+  }
+}
 
