@@ -13,7 +13,7 @@ function Contact() {
         <h2 className='contact-subtitle'>Ruff Mom Life</h2>
         <h2 className="contact-title" >Get In Touch</h2>
         <p className="contact-text">Email address</p>
-        <p className='contact-text'>hello@awesome.com</p>
+        <p className='contact-text'>ruffmomlife@gmail.com</p>
         </div>
 
         

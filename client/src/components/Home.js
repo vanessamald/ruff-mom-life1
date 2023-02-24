@@ -76,13 +76,13 @@ class Home extends Component {
                         </div>
 
                     <div className="home-container">
-                    <Category/>
-                        <About/>
                         
-                        <Products/>
-                        <Contact/>
-                        <Footer/>
                     </div>
+                    <Category/>
+                    <About/>
+                    <Products/>
+                    <Contact/>
+                    <Footer/>
             </div>
     )}
 }

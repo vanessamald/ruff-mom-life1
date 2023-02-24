@@ -4,11 +4,10 @@ function Footer () {
 
     return (
     <div className ="footer">
-        <p
+        <p className='footer-links'
         style={{
-            textAlign: 'center',
-            marginTop: '100px'
-        }}>Website @copyright Revivir Studio</p>
+            textAlign: 'center'
+        }}>Website Design by Revivir Studio</p>
     </div>
 )}
 
