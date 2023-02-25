@@ -10,14 +10,8 @@ import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navigation({ name, ...props }) {
-    /*
-        const [show, setShow] = useState(false);
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
-        */
       
         const guestLinks = (
-            
             <Fragment>
                 <NavItem>
                     <RegisterModal/>
@@ -30,18 +24,7 @@ function Navigation({ name, ...props }) {
         
         const { isAuthenticated, user } = props.auth;
         const [style, setStyle] = useState("hidden-menu");
-        
-    
-        const changeStyle = () => {
-            console.log("you just clicked");
-            setStyle("open-menu");
-            const html = document.getElementsByTagName('html')[0]
-            html.classList.add('lock-sreen');
-        };
-
-        const closeMenu = () => {
-            setStyle("hidden-menu");
-        }
+        const [ button, setButton] = useState("menu-btn");
 
         useEffect(() => {
             const html = document.getElementsByTagName('html')[0]
@@ -51,8 +34,20 @@ function Navigation({ name, ...props }) {
             } else {
               html.classList.remove('lock-screen')
             }
-           
           });
+
+          const changeButton = () => {
+            if (button) {
+            setButton("change");
+            setStyle("open-menu");
+            const html = document.getElementsByTagName('html')[0]
+            html.classList.add('lock-sreen');
+            }
+            if (button === "change") {
+            setButton("menu-btn");
+            setStyle("hidden-menu");
+            }
+        };
 
     return (
         <>
@@ -61,9 +56,11 @@ function Navigation({ name, ...props }) {
                 <div className="title-container">
                     <a href="/" className='title'>Ruff Mom Life</a>
                 </div>
-                <button className="menu-btn" onClick={changeStyle}>
-                Menu
-                </button>
+                <div className={button} onClick={changeButton}>
+                    <span className='menu-span1'></span>
+                    <span className='menu-span2'></span>
+                    <span className='menu-span3'></span>
+                </div>
             </div>
             <div className={style} >
                 <div className='menu-btns-container'>
@@ -73,7 +70,7 @@ function Navigation({ name, ...props }) {
                 ) : (
                 <LoginModal/> 
                 )}
-                <a className="menu-close" onClick={closeMenu}>Close</a>
+                
                 </div>
                 <p className="user-links welcome-text">{ user ? `Welcome ${user.name}!` : ''}</p>
                 <a className="" href="/">Shop</a>

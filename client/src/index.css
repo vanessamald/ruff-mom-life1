@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Upright&family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 * {
   background-color: #F2EFE3;
   /*
   
   */
+ 
   font-family: 'Roboto', sans-serif;
   font-family: 'Cinzel', serif;
   font-family: 'Cormorant Upright', serif;
 }
 
 body {
-  
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -26,11 +27,10 @@ code {
     monospace;
 }
 
-
-
-.flex-container {
+.home-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-bottom: 100px;
 }
 
@@ -38,15 +38,16 @@ code {
   display: flex;
   flex-direction: row;
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .title {
-  
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Montserrat', sans-serif;
   color: black;
-  font-size: 5vw;
+  font-size: 2vw;
   margin-left: 25px;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 
 .title:hover {
@@ -55,20 +56,22 @@ code {
 }
 
 .home-image {
-  float:right;
+  
  }
 
 .home-text-container {
   display: flex;
   flex-direction: column;
-  margin-top: 300px;
-  margin-left: 25px;
+  margin-top: 350px;
 }
 
 .home-text {
-  font-size: 56px;
- 
+  display: flex;
+  flex-direction: row;
+  font-size: 10vw;
+  font-family: 'Cormorant Upright', serif;
 }
+
 
 .subtext {
   font-size: 24px
@@ -77,7 +80,7 @@ code {
 .home-image {
   height: auto;
   width: 540px;
-  margin-right: 25px;
+  /*margin-right: 25px;*/
 }
 
 .about-text {
@@ -89,10 +92,15 @@ code {
   width: 540px; 
 }
 
+.about-image {
+  margin-right: 25px;
+}
+
 .about-container {
   display: flex;
 
   flex-direction: row;
+  justify-content: space-between;
   margin-top: 100px;
   margin-bottom: 100px;
 }
@@ -122,7 +130,7 @@ code {
 
 .contact-text {
   font-weight: bold;
-  margin-left: 50%;
+  margin-left: 25px;
   font-size: 16px;
 }
 
@@ -222,7 +230,7 @@ span.text-light {
 
 /* Category Carousel styling */
 .category-image-container, .home-image-container {
-  width: 100%;
+  /*width: 100%;*/
 }
 
 
@@ -235,7 +243,7 @@ span.text-light {
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
-  
+  justify-content: space-between;
 }
 
 .category-text-container {
@@ -265,12 +273,17 @@ span.text-light {
 
 /* Footer Styling */ 
 .footer {
-  margin-top: 200px;
-  background-color: white;
+  padding-top: 200px;
+  margin-top: 100px;
+  background-color: black;
+
 }
 
 .footer-links {
   text-align: center;
+  margin-bottom: 0px;
+  background-color: black;
+  color: white;
 }
 /*
 .footer {
@@ -289,30 +302,74 @@ span.text-light {
 .hidden-menu {
   visibility: hidden;
   height: 0px;
+  
 }
 
 .menu-btn {
-  margin-right: 25px;
-  font-family: 'Cinzel';
-  border-width: 1px;
-  font-size: 12px;
-  margin-top: 20px;
-  height: 25px;
-  width: 150px;
-  /*
-  padding: 10px 100px;
-  */
+  flex-direction: column;
+  height: 2rem;
+  justify-content: space-between;
+  left: 50%;
+  position: absolute;
+  top: 5%;
+  transform: translate(-50%,-50%);
+  width: 5.5rem;
+  align-items: center;
+  display: flex;
+  color: black;
+  background-color: transparent;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+
+.menu-span1, .menu-span2, .menu-span3 {
+  width: 40px;
+  height: 2px;
+  background-color: black;
+  transition: 1s;
+}
+
+.change .menu-span1 {
+  -webkit-transform: translateY(10px) rotate(-45deg);
+   transform: translateY(10px) rotate(-45deg);
+   background-color: black;
+   position: absolute;
+   
+}
+
+.change .menu-span2 {
+  opacity: 0;
+  display: hidden;
+}
+
+.change .menu-span3 {
+  transform: translateY(10px) rotate(45deg);
+  background-color: black;
+  position: absolute;
+}
+
+.change {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  height: 2rem;
+  background-color: transparent;
+  align-items: center;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  display: flex;
+  z-index: 1;
 }
 
 .open-menu {
   opacity: 0.99;
-  float: right;
-  width: 70%;
+  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
-  left: 30%;
+  left: 0;
   background-color: #A59B8D;
+  transition: all .6s cubic-bezier(.55,0,.1,1);
 }
 
 .lock-screen {
@@ -326,10 +383,10 @@ span.text-light {
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid black;
-  margin-bottom: 100px;
 }
 
 .menu-btns-container {
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -383,7 +440,7 @@ span.text-light {
 /* Menu Styling Ends */
 
 /* Dog Paw Animation */ 
-.paw-print-container {
+.paw-print-content {
   background-color: transparent;
   width: 25px;
   
@@ -497,5 +554,42 @@ span.text-light {
   100% {
     opacity: 0;
   }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX((0%));
+  }
+}
+
+@media only screen and (max-width: 600px) {
+.home-container, .about-container {
+  display: flex;
+  flex-direction: column-reverse;
+  }
+.home-image, .about-image {
+  width:100%;
+}
+.home-text-container, .about-text-container {
+  margin-top: 0px;
+}
+.paw-print-container {
+  width:50%;
+}
+.paw-print-1, .paw-print-2 {
+  height: 100px;
+}
+.paw-print-1 {
+  top: 100px;
+}
+.paw-print2 {
+  top: 300px;
+}
+.paw-print-3, .paw-print-4 {
+  display: none;
+}
 }
 

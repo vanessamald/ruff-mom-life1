@@ -42,48 +42,31 @@ class Home extends Component {
         const user = this.props.user;
 
         return (
-            <div style={{
-                
-            }}>
-              
+            <div>
                 <div className='paw-print-container'>
-                    <img className="paw-print-1" src={pawPrint}></img>
-                </div>
-                <div className='paw-print-container'>
-                    <img className="paw-print-2" src={pawPrint}></img>
-                </div>
-                <div className='paw-print-container'>
-                    <img className="paw-print-3" src={pawPrint}></img>
-                </div>
-                <div className='paw-print-container'>
-                    <img className="paw-print-4" src={pawPrint}></img>
-                </div>
-                
-               
-               
-                    <Navigation/>
-                    
-                        <div className="flex-container" style={{
-                           
-                        }}>
-                            <div className="home-text-container">
-                                <p className="home-text">Pets are family</p>
-                                <p className="home-text subtext">Handmade pet accessories made with love</p>
-                            </div>
-                            <div className="home-image-container">
-                            <img className="home-image" src={heroImage}></img>
-                            </div>
-                        </div>
-
-                    <div className="home-container">
-                        
+                    <div className='paw-print-content'><img className="paw-print-1" src={pawPrint}></img></div>
+                    <div className='paw-print-content'><img className="paw-print-2" src={pawPrint}></img></div>
+                    <div className='paw-print-content'><img className="paw-print-3" src={pawPrint}></img></div>
+                    <div className='paw-print-content'><img className="paw-print-4" src={pawPrint}></img></div>
+                </div>  
+                <Navigation/>
+                <div className="home-container" style={{ }}>
+                    <div className="home-text-container">
+                        <p className="home-text">Pets are family</p>
+                        <p className="home-text subtext">Handmade pet accessories made with love</p>
                     </div>
+                    <div className="home-image-container">
+                        <img className="home-image" src={heroImage}></img>
+                    </div>
+                </div>
+                <div>
                     <Category/>
                     <About/>
                     <Products/>
                     <Contact/>
                     <Footer/>
-            </div>
+                </div>
+        </div>
     )}
 }
 
