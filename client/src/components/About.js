@@ -7,7 +7,7 @@ function About() {
         
         
         <div className="about-text-container"> 
-        <h2>Our Story</h2>
+        <h2 className="about-title">Our Story</h2>
         <p className="about-text">Hello there! Our pieces are thoughtfully made and curated for dog lovers and their owners.</p>
 
         

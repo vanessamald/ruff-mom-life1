@@ -25,6 +25,9 @@ class Main extends Component {
                     <Route path='/orders'>
                         <Orders/>
                     </Route>
+                    <Route path='/products'>
+                        <Products/>
+                    </Route>
                     <Redirect to='/home'/>
                 </Switch>
             </div>

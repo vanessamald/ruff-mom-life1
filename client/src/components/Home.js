@@ -60,9 +60,10 @@ class Home extends Component {
                     </div>
                 </div>
                 <div>
+                    
                     <Category/>
+                    <a href="/products">Shop All</a>
                     <About/>
-                    <Products/>
                     <Contact/>
                     <Footer/>
                 </div>

@@ -1,5 +1,6 @@
 import { Component, Fragment } from 'react';
 import AppNavbar from './Navbar';
+import Navigation from './Navigation';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getOrders } from '../actions/orderActions';
@@ -30,7 +31,7 @@ class Orders extends Component {
         }
         return(
             <div>
-                <AppNavbar/>
+                <Navigation/>
                 {this.props.isAuthenticated ?
                     <Fragment>
                         {this.props.order.orders!==[] ? null :

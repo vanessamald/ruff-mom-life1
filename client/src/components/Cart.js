@@ -7,6 +7,7 @@ import { getCart, deleteFromCart } from '../actions/cartActions';
 import Checkout from './Checkout';
 import { checkout } from '../actions/orderActions';
 import Navigation from './Navigation';
+import Login from './auth/login';
 
 class Cart extends Component {
 
@@ -47,7 +48,11 @@ class Cart extends Component {
                             <Alert color="info" className="text-center">Your cart is empty!</Alert>
                         }
                     </Fragment>
-                    : <Alert color="danger" className="text-center">Login to View!</Alert>
+                    : <div className='cart-login-container'>
+                        <p className="text-center cart-login-alert">Login Below to View!</p>
+                        <Login/>
+                    </div>
+                    
                 }  
         
             
@@ -56,19 +61,19 @@ class Cart extends Component {
                     <div className="row">
                         {this.props.cart.cart.items.map((item)=>(
                             <div className="col-md-4">
-                        <Card>
+                        <div className='card-container'>
                             <CardBody>
                                 <CardTitle tag="h5">{item.name}</CardTitle>
                                 <CardSubtitle tag="h6">Price: ${item.price}</CardSubtitle>
                                 <CardText>Quantity: {item.quantity}</CardText>
-                                <Button  onClick={this.onDeleteFromCart.bind(this, user._id, item.productId)}>Delete</Button>
+                                <button  onClick={this.onDeleteFromCart.bind(this, user._id, item.productId)}>Delete</button>
                             </CardBody>
-                        </Card>
+                        </div>
                         <br/>
                         </div>
                         ))}
                         <div class="col-md-12">
-                        <Card>
+                        <div className='card-container'>
                             <CardBody className='checkout'>
                                 <CardTitle tag="h5">Total Cost =  {this.props.cart.cart.bill}</CardTitle>
                                 <form action="/create-checkout-session" method="POST">
@@ -83,7 +88,7 @@ class Cart extends Component {
                                 > Checkout</button>
                                 </form>                  
                             </CardBody>
-                        </Card>
+                        </div>
                         </div>
                     </div>
                 </Container>
