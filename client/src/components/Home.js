@@ -62,7 +62,6 @@ class Home extends Component {
                 <div>
                     
                     <Category/>
-                    <a href="/products">Shop All</a>
                     <About/>
                     <Contact/>
                     <Footer/>

@@ -62,6 +62,7 @@ function Navigation({ name, ...props }) {
                     <span className='menu-span2'></span>
                     <span className='menu-span3'></span>
                 </div>
+                <a className="" href="/cart"><RiShoppingCartLine className='menu-cart-icon'/></a>
                 {/* 
                 <a className="" href="/cart"><RiShoppingCartLine className='menu-cart-icon'/></a>
                 */}
@@ -79,11 +80,10 @@ function Navigation({ name, ...props }) {
                 </div>
                 
                 <p className="user-links welcome-text">{ user ? `Welcome ${user.name}!` : ''}</p>
-                <a className="" href="/">Shop</a>
+                <a href="/products">Shop All</a>
                 <a className="" here="/">Menu item</a>
                 <a className="" href="/">Menu item</a>
                 <a className="" href="/orders">Orders</a>
-                <a className="" href="/cart"><RiShoppingCartLine className='cart-icon'/></a>
             </div>
         </div>
     </>

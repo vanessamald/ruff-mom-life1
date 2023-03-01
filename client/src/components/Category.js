@@ -34,7 +34,7 @@ class Category extends Component {
         <div className='category-text-container'>
             
             <h2 className="category-name">Dog Bandanas</h2>
-            <p>100% cotton handmade Bandanas</p>
+            <p className='category-subtext'>100% cotton handmade Bandanas</p>
             <button className='shopnow-button'>Shop now</button>
         </div>
         <div className="category-image-container">
@@ -50,7 +50,7 @@ class Category extends Component {
         <div className='category-text-container'>
             
             <h2 className="category-name">From me to me</h2>
-            <p>100% cotton T-shirts</p>
+            <p className='category-subtext'>100% cotton T-shirts</p>
             <button className='shopnow-button'>Shop now</button>
         </div>
         <div className="category-image-container">
@@ -66,7 +66,7 @@ class Category extends Component {
         <div className='category-text-container'>
             
             <h2 className="category-name">Just because</h2>
-            <p>Accessories</p>
+            <p className='category-subtext'>Accessories</p>
             <button onClick={handleClick} className='shopnow-button'>Shop now</button>
         </div>
         <div className="category-image-container">

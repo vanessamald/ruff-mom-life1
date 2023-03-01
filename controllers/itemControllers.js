@@ -4,6 +4,10 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 
+module.exports.get_item = (req, res) => {
+    Item.findById({_id: req.params.id}, req.body).then(item => res.json(item));
+}
+
 module.exports.get_items = (req,res) => {
     Item.find().sort({date:-1}).then(items => res.json(items));
 }

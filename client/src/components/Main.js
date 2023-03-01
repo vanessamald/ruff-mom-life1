@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import Cart from './Cart';
 import Orders from './Order';
 import Products from './Products';
+import Item from './Item';
 
 class Main extends Component {
     render(){
@@ -14,7 +15,6 @@ class Main extends Component {
                 <Switch>
                     <Route path='/home'>
                         <Home/>
-                        
                     </Route>
                     <Route path='/addItem'>
                         <AddItem/>
@@ -27,6 +27,9 @@ class Main extends Component {
                     </Route>
                     <Route path='/products'>
                         <Products/>
+                    </Route>
+                    <Route path='/item'>
+                        <Item/>
                     </Route>
                     <Redirect to='/home'/>
                 </Switch>

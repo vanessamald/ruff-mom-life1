@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 
+router.get('/items/:id', itemController.get_item);
 router.get('/items', itemController.get_items);
 router.post('/items',itemController.post_item);
 router.put('/items/:id',itemController.update_item);

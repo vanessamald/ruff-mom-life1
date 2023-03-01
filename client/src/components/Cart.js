@@ -80,8 +80,7 @@ class Cart extends Component {
                                 <button
                                     type="submit"
                                     id="checkout-button"
-                                    className='button'
-
+                                    className='cart-button'
                                     user={user._id}
                                     amount={this.props.cart.cart.bill}
                                     checkout={this.props.checkout}

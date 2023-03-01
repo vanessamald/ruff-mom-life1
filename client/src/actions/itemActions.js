@@ -1,6 +1,14 @@
 import axios from 'axios';
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, UPDATE_ITEM, ITEMS_LOADING } from './types';
+import { GET_ITEM, GET_ITEMS, ADD_ITEM, DELETE_ITEM, UPDATE_ITEM, ITEMS_LOADING } from './types';
 import { returnErrors } from './errorActions';
+
+export const getItem = (id, item) => (dispatch) => {
+    axios.get(`/api/items/${id}`, item)
+    .then(res => dispatch({
+        type: GET_ITEM,
+        payload: res.data
+    }))
+}
 
 export const getItems = () => dispatch => {
     dispatch(setItemsLoading());

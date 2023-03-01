@@ -1,11 +1,10 @@
 import { Component } from 'react';
-import AppNavbar from './Navbar';
 import {Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button, Container} from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getItems } from '../actions/itemActions';
 import { addToCart } from '../actions/cartActions';
-import Dropdown from 'react-bootstrap/Dropdown';
+import { ImHappy } from "react-icons/im";
 
 class Products extends Component {
 
@@ -14,7 +13,7 @@ class Products extends Component {
     }
 
     static propTypes = {
-        getItems: PropTypes.func.isRequired,
+        getItem: PropTypes.func.isRequired,
         item: PropTypes.object.isRequired,
         isAuthenticated: PropTypes.bool,
         addToCart: PropTypes.func.isRequired,
@@ -29,41 +28,55 @@ class Products extends Component {
     render(){
         const { items } = this.props.item;
         const user = this.props.user;
+    
+    //const [ icon, setIcon ] = useState();
+
+        const handleMouse = e => {
+            e.target.style.cursor = "url(images/cart-solid.svg), pointer"
+        }
 
         return (
             
             <div className="shop-all-container">
-            <h2 className="shop-all-link">Shop All</h2>
-            <Container>
+            <h2 className="shop-all-link">Collection</h2>
+            <div>
             
-                <div className="row">  
+                <div className="products-container">  
                  
                 {items.map((item)=>(
-                    <div className="col-md-4">
-                    <Card className="mb-4">
-                        <CardBody>
-                            <CardTitle tag="h5">{item.title}</CardTitle>
+                    
+                    <div className="product-card">
+                        <div>
                             
-                            <CardImg variant="top" src={`/images/${item.image}`} ></CardImg>
-                            <CardSubtitle tag="h6">Price: $ {item.price}</CardSubtitle>
-                            <CardText>{item.category}</CardText>
+                            <button className='product-link' onClick={this.onAddToCart.bind(this, user._id, item._id)}
+                                onMouseEnter={handleMouse}
+                            >
+                                <img className="products-image" variant="top" src={`/images/${item.image}`} ></img>
+                            </button>
+                            
+                            {/* 
                             {this.props.isAuthenticated ? 
                             
-                                <button 
-                                    className="add-to-cart"
-                                    size="sm"
-                                    onClick={this.onAddToCart.bind(this, user._id, item._id)}
-                                    >Add To Cart</button> :
-                                    null}
+                            <button 
+                                className="add-to-cart"
+                                size="sm"
+                                onClick={this.onAddToCart.bind(this, user._id, item._id)}
+                                >Add To Cart</button> :
+                                null}
+                            */}
+                            <CardTitle tag="h5">{item.title}</CardTitle>
+                            <CardSubtitle tag="h6">Price: $ {item.price}</CardSubtitle>
+                            {/*<CardText>{item.category}</CardText> */}
+                          
                                     
-                        </CardBody>
-                    </Card>
+                        </div>
                     </div>
+                   
                     
                 ))}
                 
                  </div>
-            </Container>
+            </div>
             </div>
         )
     }
