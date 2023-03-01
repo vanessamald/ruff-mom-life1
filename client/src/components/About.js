@@ -3,7 +3,7 @@ import aboutImage from '../images2/about-image.JPG';
 
 function About() {
     return (
-    <div className='about-container'>
+    <div id='about' className='about-container'>
         
         
         <div className="about-text-container"> 

@@ -7,8 +7,8 @@
   /*
   color: #CFA27C;
   */
-  
-  color: #AD8145;
+  color: #654321;
+  /*color: #AD8145;*/
   font-family: 'Roboto', sans-serif;
   font-family: 'Cinzel', serif;
   font-family: 'Cormorant Upright', serif;
@@ -57,7 +57,7 @@ code {
   margin-left: 25px;
   text-transform: uppercase;
   font-weight: 1000;
-  color: #AD8145; 
+  color: #654321; 
 }
 
 .title:hover {
@@ -68,7 +68,7 @@ code {
 .home-text-container {
   display: flex;
   flex-direction: column;
-  margin-top: 250px;
+  margin-top: 425px;
 }
 
 .home-text {
@@ -77,21 +77,30 @@ code {
   font-size: 10vw;
   font-family: 'Cormorant Upright', serif;
   margin-left: 25px;
+  line-height: 10vw;
 }
 
 
 .subtext {
-  font-size: 24px
+  font-size: 24px;
+  margin-top: -25px;
+  background: transparent;
 }
 
 .home-image {
-  height: auto;
-  width: 540px;
+  height: 700px;
+  width: auto;
   /*margin-right: 25px;*/
 }
 
+/* About Styling */
 .about-text {
-  font-family: 'Cinzel';
+  font-family: 'Basetica Bold';
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 20px;
 }
 
 .about-image {
@@ -107,7 +116,6 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #F2EFE3;
 }
 
 .about-text-container {
@@ -115,7 +123,6 @@ code {
   flex-direction: column;
   margin-top: 500px;
   margin-left: 25px;
-  background-color: #F2EFE3;
 }
 
 .about-text {
@@ -125,7 +132,9 @@ code {
 .about-title {
   
 }
+/* About Styling Ends */
 
+/* Contact Styling */
 .contact-container {
   width: 100%;
   margin-bottom: 100px;
@@ -164,6 +173,7 @@ code {
   font-size: 48px;
   margin-left: 25px;
 }
+/* Contact Styling Ends */
 
 .btn.btn-primary {
   color: black;
@@ -353,7 +363,7 @@ span.text-light {
 .category-name {
   font-size: 42px;
   line-height: 42px;
-  letter-spacing: -.9px;
+  /*letter-spacing: -2px;*/
   
 }
 
@@ -374,7 +384,7 @@ span.text-light {
     bottom: 200px;
     right: 40px;
     border-radius: 25px;
-    background-color: wheat;
+    background-color: #AD8145;
     font-size: 12px;
     text-transform: uppercase;
     color: white;
@@ -790,5 +800,25 @@ a:hover {
 .row {
   flex-direction: column;
 }
+.categories-container {
+  flex-direction: column;
 }
-
+.category-container {
+  border: none;
+  max-width: fit-content;
+}
+.category-container:nth-child(4) {
+  border: none;
+}
+.category-container:nth-child(2) {
+  border: none;
+}
+.category-button {
+  bottom: 150px;
+  right: 10px;
+  margin-bottom: 10px;
+}
+.category-text-container {
+  
+}
+}

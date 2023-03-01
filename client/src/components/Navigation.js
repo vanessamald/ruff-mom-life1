@@ -81,8 +81,8 @@ function Navigation({ name, ...props }) {
                 
                 <p className="user-links welcome-text">{ user ? `Welcome ${user.name}!` : ''}</p>
                 <a href="/products">Shop All</a>
-                <a className="" here="/">Menu item</a>
-                <a className="" href="/">Menu item</a>
+                <a className="" href="#about">About</a>
+                <a className="" href="#contact">Contact</a>
                 <a className="" href="/orders">Orders</a>
             </div>
         </div>
