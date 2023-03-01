@@ -45,7 +45,7 @@ class Cart extends Component {
                 {this.props.isAuthenticated ?
                     <Fragment>
                         {this.props.cart.cart ? null :
-                            <Alert color="info" className="text-center">Your cart is empty!</Alert>
+                        <Alert color="info" className="text-center">Your cart is empty!</Alert>
                         }
                     </Fragment>
                     : <div className='cart-login-container'>
@@ -64,9 +64,10 @@ class Cart extends Component {
                         <div className='card-container'>
                             <CardBody>
                                 <CardTitle tag="h5">{item.name}</CardTitle>
+                                <img src={`/images/${item.image}`}></img>
                                 <CardSubtitle tag="h6">Price: ${item.price}</CardSubtitle>
                                 <CardText>Quantity: {item.quantity}</CardText>
-                                <button  onClick={this.onDeleteFromCart.bind(this, user._id, item.productId)}>Delete</button>
+                                <button className='cart-buttons'  onClick={this.onDeleteFromCart.bind(this, user._id, item.productId)}>Delete</button>
                             </CardBody>
                         </div>
                         <br/>
@@ -80,7 +81,7 @@ class Cart extends Component {
                                 <button
                                     type="submit"
                                     id="checkout-button"
-                                    className='cart-button'
+                                    className='cart-buttons'
                                     user={user._id}
                                     amount={this.props.cart.cart.bill}
                                     checkout={this.props.checkout}

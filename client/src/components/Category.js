@@ -12,71 +12,64 @@ import { addToCart } from '../actions/cartActions';
 import Carousel from 'react-bootstrap/Carousel';
 
 class Category extends Component {
-
-//function Category(items) {
-   
-    
-
     render(){
         const handleClick = () => {
             console.log('HELLO WORLD')
           }
 
     return ( 
-    
-       
-
-<Carousel>
-<Carousel.Item interval={5000}>
-
-<div className='category-container'>
-
-        <div className='category-text-container'>
+    <div className='categories-container'>
+        <div className='category-container'>
             
-            <h2 className="category-name">Dog Bandanas</h2>
-            <p className='category-subtext'>100% cotton handmade Bandanas</p>
-            <button className='shopnow-button'>Shop now</button>
+            <div className="category-image-container">
+                <img className='category-image' src={dogCategory}></img>
+                <button className='category-button'>Shop now</button>
+            </div>
+            <div className='category-text-container'>
+                
+                <p className='category-subtext'>100% cotton handmade Bandanas</p>
+                <h2 className="category-name">Shop All</h2>
+            </div>
         </div>
-        <div className="category-image-container">
-        <img className='category-image' src={dogCategory}></img>
-        </div>
-    </div>
 
-</Carousel.Item>
-<Carousel.Item interval={5000}>
-    
-<div className='category-container'>
-
-        <div className='category-text-container'>
+        <div className='category-container'>
             
-            <h2 className="category-name">From me to me</h2>
-            <p className='category-subtext'>100% cotton T-shirts</p>
-            <button className='shopnow-button'>Shop now</button>
+            <div className="category-image-container">
+                <img className='category-image' src={dogCategory}></img>
+                <button className='category-button'>Shop now</button>
+            </div>
+            <div className='category-text-container'>
+                
+                <p className='category-subtext'>100% cotton handmade Bandanas</p>
+                <h2 className="category-name">Dog Bandanas</h2>
+            </div>
         </div>
-        <div className="category-image-container">
-        <img className='category-image' src={fromme}></img>
+           <div className='category-container'>
+           
+            <div className="category-image-container">
+                <img className='category-image' src={fromme}></img>
+                <button className='category-button'>Shop now</button>
+            </div>
+            <div className='category-text-container'>
+                
+                <p className='category-subtext'>100% cotton T-shirts</p>
+                <h2 className="category-name">T-Shirts</h2>
+            </div>
         </div>
-    </div>
-
-</Carousel.Item>
-<Carousel.Item interval={5000}>
-    
-<div className='category-container'>
-
-        <div className='category-text-container'>
-            
-            <h2 className="category-name">Just because</h2>
-            <p className='category-subtext'>Accessories</p>
-            <button onClick={handleClick} className='shopnow-button'>Shop now</button>
+        <div className='category-container'>
+          
+            <div className="category-image-container">
+                <img className='category-image' src={justBecause}></img>
+                <button onClick={handleClick} className='category-button'>Shop now</button>
+            </div>
+            <div className='category-text-container'>
+                <p className='category-subtext'>Accessories</p>
+                <h2 className="category-name">Just because</h2>
+                
+                
+            </div>
         </div>
-        <div className="category-image-container">
-        <img className='category-image' src={justBecause}></img>
-        </div>
-    </div>
-   
-</Carousel.Item>
-</Carousel>
-    
+    </div>   
 )}}
 
 const mapStateToProps = (state) => ({
@@ -84,6 +77,5 @@ const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated,
     user: state.auth.user
 })
-
 
 export default connect(mapStateToProps, {getItems})(Category);
