@@ -20,53 +20,43 @@ class Category extends Component {
     return ( 
     <div className='categories-container'>
         <div className='category-container'>
-            
             <div className="category-image-container">
                 <img className='category-image' src={dogCategory}></img>
-                <button className='category-button'>Shop now</button>
+                <a href='/products' className='category-button'>Shop Now</a>
             </div>
             <div className='category-text-container'>
-                
                 <p className='category-subtext'>100% cotton handmade Bandanas</p>
                 <h2 className="category-name">Shop All</h2>
             </div>
         </div>
-
-        <div className='category-container'>
-            
+        <div className='category-container'> 
             <div className="category-image-container">
                 <img className='category-image' src={dogCategory}></img>
-                <button className='category-button'>Shop now</button>
+                <a href='' className='category-button'>Shop Now</a>
             </div>
             <div className='category-text-container'>
-                
                 <p className='category-subtext'>100% cotton handmade Bandanas</p>
                 <h2 className="category-name">Dog Bandanas</h2>
             </div>
         </div>
-           <div className='category-container'>
-           
+        <div className='category-container'>
             <div className="category-image-container">
                 <img className='category-image' src={fromme}></img>
-                <button className='category-button'>Shop now</button>
+                <a href='' className='category-button'>Shop Now</a>
             </div>
-            <div className='category-text-container'>
-                
+            <div className='category-text-container'> 
                 <p className='category-subtext'>100% cotton T-shirts</p>
                 <h2 className="category-name">T-Shirts</h2>
             </div>
         </div>
         <div className='category-container'>
-          
             <div className="category-image-container">
                 <img className='category-image' src={justBecause}></img>
-                <button onClick={handleClick} className='category-button'>Shop now</button>
+                <a href='' className='category-button'>Shop Now</a>
             </div>
             <div className='category-text-container'>
                 <p className='category-subtext'>Accessories</p>
-                <h2 className="category-name">Just because</h2>
-                
-                
+                <h2 className="category-name">Just because</h2> 
             </div>
         </div>
     </div>   

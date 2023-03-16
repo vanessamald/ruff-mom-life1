@@ -1,17 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Upright&family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+/*
+@font-face {
+  font-family: "Bromawo Regular";   
+  font-style: "Bromawo";
+  src: local("Bromawo"),
+    url("fonts/bromawo-elegant-typeface/Bromawo-Regular.ttf") format("ttf");
+}
+*/
 
 * {
   background-color: #FDFAF0;
+  scroll-behavior: smooth;
+  
   /*
   color: #CFA27C;
   */
   color: #654321;
-  /*color: #AD8145;*/
+  -webkit-font-smoothing: antialiased;
+  /*color: #AD8145;
   font-family: 'Roboto', sans-serif;
-  font-family: 'Cinzel', serif;
+  
   font-family: 'Cormorant Upright', serif;
+  */
 }
 
 body {
@@ -32,6 +44,7 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: 1px solid;
 }
 
 .home-image-container {
@@ -52,17 +65,27 @@ code {
 }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2vw;
+  letter-spacing: 0;
   margin-left: 25px;
-  text-transform: uppercase;
-  font-weight: 1000;
+  font-size: 5vw;
+  
   color: #654321; 
+  position: absolute;
+  top: -20px;
+}
+
+.title-em {
+  background-color: transparent;
+  font-size: 8vw;
+  margin-right: -10px;
+  font-family: "Cormorant Upright", serif;
+  top: -10px;
 }
 
 .title:hover {
+  font-style: normal;
   text-decoration: none;
-  color: #AD8145; 
+  color: #654321; 
 }
 
 .home-text-container {
@@ -74,10 +97,10 @@ code {
 .home-text {
   display: flex;
   flex-direction: row;
-  font-size: 10vw;
+  font-size: 5vw;
   font-family: 'Cormorant Upright', serif;
   margin-left: 25px;
-  line-height: 10vw;
+  line-height: 5vw;
 }
 
 
@@ -90,7 +113,6 @@ code {
 .home-image {
   height: 700px;
   width: auto;
-  /*margin-right: 25px;*/
 }
 
 /* About Styling */
@@ -104,18 +126,15 @@ code {
 }
 
 .about-image {
+  width: 50vw;
   height: auto;
-  width: 540px; 
-}
-
-.about-image {
-  
 }
 
 .about-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-top: 1px solid;
 }
 
 .about-text-container {
@@ -239,8 +258,13 @@ span.text-light {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
+  justify-content: space-between;
   margin-top: 50px;
+}
+
+.product-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card {
@@ -296,14 +320,10 @@ span.text-light {
 }
 
 .category-image {
-  height: 370px;
-  width: 370px;
+  height: 400px;
+  width: 400px;
   position: relative;
   object-fit: cover;
-}
-
-.category-image:hover {
-  opacity: 0.5;
 }
 
 .categories-container {
@@ -311,27 +331,29 @@ span.text-light {
   justify-content: center;
   flex-wrap: wrap;
   padding: 0 3%;
-  
+  width: 100%;
 }
 
 .category-container {
   flex-basis: 43%;
   max-width: 43%;
   padding-bottom: 62px;
-    padding-top: 62px;
-    text-align: center;
-
-    border-bottom: 1px solid;
-   padding-bottom: 62px;
-   padding-top: 62px;
-   
+  padding-top: 62px;
+  text-align: center;
+  padding-bottom: 62px;
+  padding-top: 62px;
   position: relative;
+
+}
+
+.category-container:nth-child(1) {
+  border-bottom: 1px solid;
 }
 
 .category-container:nth-child(2) {
   border-left: 1px solid;
+  border-bottom: 1px solid;
   /*padding-left: 5%;*/
-  
 }
 
 .category-container:nth-child(4) {
@@ -364,7 +386,6 @@ span.text-light {
   font-size: 42px;
   line-height: 42px;
   /*letter-spacing: -2px;*/
-  
 }
 
 .category-subtext {
@@ -380,22 +401,32 @@ span.text-light {
 
 .category-button {
   position: absolute;
-    border: none;
-    bottom: 200px;
-    right: 40px;
-    border-radius: 25px;
-    background-color: #AD8145;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: white;
-    font-family: "Basetica";
-    font-weight: 900;
-    letter-spacing: .09em;
-    width: 129px;
-    height: 51px;
-    line-height: 51px;
-    transition: .3s ease;
-    z-index: 1;
+  border: none;
+  bottom: 200px;
+  right: 40px;
+  border-radius: 25px;
+  background-color: #AD8145;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Basetica";
+  font-weight: 900;
+  letter-spacing: .09em;
+  width: 129px;
+  height: 51px;
+  line-height: 51px;
+  transition: .3s ease;
+  z-index: 1;
+}
+
+.category-button:hover {
+  text-decoration: none;
+  color: white;
+  font-style: normal;
+}
+
+.category-button:hover .category-image { 
+  opacity: 0.5;
 }
 
 /*category carousel indicators */
@@ -409,7 +440,7 @@ span.text-light {
 }
 
 .add-to-cart {
-  padding: 10px 50px;
+  padding: 10px 30px;
   font-size: 12px;
   border-width: 1px;
   border-color: #AD8145;
@@ -483,14 +514,13 @@ a:hover {
 .hidden-menu {
   visibility: hidden;
   height: 0px;
-  
 }
 
 .menu-btn {
   flex-direction: column;
   height: 2rem;
   justify-content: space-between;
-  left: 50%;
+  left: 90%;
   position: absolute;
   top: 5%;
   transform: translate(-50%,-50%);
@@ -506,14 +536,14 @@ a:hover {
 .menu-span1, .menu-span2, .menu-span3 {
   width: 40px;
   height: 2px;
-  background-color: #AD8145;
+  background-color: #654321;
   transition: 1s;
 }
 
 .change .menu-span1 {
   -webkit-transform: translateY(10px) rotate(45deg);
    transform: translateY(10px) rotate(45deg);
-   background-color: #AD8145;
+   background-color: #654321;
    position: absolute;
 }
 
@@ -524,14 +554,14 @@ a:hover {
 
 .change .menu-span3 {
   transform: translateY(10px) rotate(-45deg);
-  background-color: #AD8145;
+  background-color: #654321;
   position: absolute;
 }
 
 .change {
   position: absolute;
   top: 4%;
-  left: 50%;
+  left: 90%;
   height: 2rem;
   background-color: transparent;
   align-items: center;
@@ -565,12 +595,14 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   background-color: #F2EFE3;
+  height: 100px;
+  border-bottom: 1px solid black;
 }
 
 .menu-btns-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   background-color: #F2EFE3;
   margin-bottom: 100px;
 }
@@ -600,8 +632,8 @@ a:hover {
   padding: 8px;
   
   text-decoration: none;
-  font-size: 24px;
-  color: #AD8145;
+  font-size: 3vw;
+  color: #654321;
   display: block;
   text-align: center;
 
@@ -618,7 +650,7 @@ a:hover {
   font-style: italic;
   /*font-size: 28px;*/
   letter-spacing: -.008em;
-  color: #AD8145;
+  color: #654321;
   text-decoration: none;
 }
 
@@ -770,7 +802,11 @@ a:hover {
 @media only screen and (max-width: 600px) {
 .title {
   margin-top: 50px;
+  font-size: 8vw;
+}
+.title-em {
   font-size: 10vw;
+  margin-right: -5px;
 }
 .home-container, .about-container {
   display: flex;
@@ -820,5 +856,9 @@ a:hover {
 }
 .category-text-container {
   
+}
+.category-image {
+  height: 370px;
+  width: 370px;
 }
 }

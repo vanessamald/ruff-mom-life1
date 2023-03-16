@@ -12,32 +12,32 @@ import { RiShoppingCartLine } from "react-icons/ri";
 
 function Navigation({ name, ...props }) {
       
-        const guestLinks = (
-            <Fragment>
-                <NavItem>
-                    <RegisterModal/>
-                </NavItem>
-                <NavItem>
-                    <LoginModal/>
-                </NavItem>
-            </Fragment>
-        );
+    const guestLinks = (
+        <Fragment>
+            <NavItem>
+                <RegisterModal/>
+            </NavItem>
+            <NavItem>
+                <LoginModal/>
+            </NavItem>
+        </Fragment>
+    );
         
-        const { isAuthenticated, user } = props.auth;
-        const [style, setStyle] = useState("hidden-menu");
-        const [ button, setButton] = useState("menu-btn");
+    const { isAuthenticated, user } = props.auth;
+    const [style, setStyle] = useState("hidden-menu");
+    const [ button, setButton] = useState("menu-btn");
 
-        useEffect(() => {
-            const html = document.getElementsByTagName('html')[0]
+    useEffect(() => {
+        const html = document.getElementsByTagName('html')[0]
           
-            if (setStyle === "open-menu") {
-              html.classList.add('lock-sreen')
+        if (setStyle === "open-menu") {
+            html.classList.add('lock-sreen')
             } else {
-              html.classList.remove('lock-screen')
+            html.classList.remove('lock-screen')
             }
-          });
+        });
 
-          const changeButton = () => {
+        const changeButton = () => {
             if (button) {
             setButton("change");
             setStyle("open-menu");
@@ -55,32 +55,32 @@ function Navigation({ name, ...props }) {
         <div>
             <div className="nav-container">
                 <div className="title-container">
-                    <a href="/" className='title'>Ruff Mom Life</a>
+                    <a href="/" className='title'><em className='title-em'>Ruff</em> Mom Life</a>
                 </div>
                 <div className={button} onClick={changeButton}>
                     <span className='menu-span1'></span>
                     <span className='menu-span2'></span>
                     <span className='menu-span3'></span>
                 </div>
-                <a className="" href="/cart"><RiShoppingCartLine className='menu-cart-icon'/></a>
+
+                
                 {/* 
                 <a className="" href="/cart"><RiShoppingCartLine className='menu-cart-icon'/></a>
                 */}
             </div>
             <div className={style} >
-                
                 <div className='menu-btns-container'>
-                <RegisterModal />
-                {isAuthenticated ? (
-                <Logout />
-                ) : (
-                <LoginModal/> 
-                )}
-                
+                    {isAuthenticated ? (
+                    <Logout />
+                    ) : (
+                    <div>
+                        <RegisterModal/>
+                        <LoginModal/>
+                    </div> 
+                    )}
                 </div>
-                
                 <p className="user-links welcome-text">{ user ? `Welcome ${user.name}!` : ''}</p>
-                <a href="/products">Shop All</a>
+                <a href="#shop">Shop</a>
                 <a className="" href="#about">About</a>
                 <a className="" href="#contact">Contact</a>
                 <a className="" href="/orders">Orders</a>

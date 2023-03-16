@@ -8,18 +8,17 @@ import { addToCart } from '../actions/cartActions';
 
 import Products from './Products';
 import heroImage from '../images2/dog1.jpg'
+
 import About from './About';
 import Contact from './Contact';
 import Category from './Category';
 import Navigation from './Navigation';
 import { PaymentForm } from 'react-square-web-payments-sdk';
 import Footer from './Footer';
-
 import pawPrint from '../images2/dog-paws.png'
 
 class Home extends Component {
-
-   
+    
     componentDidMount(){
         this.props.getItems();
     }
@@ -38,8 +37,6 @@ class Home extends Component {
     }
 
     render(){
-        const { items } = this.props.item;
-        const user = this.props.user;
 
         return (
             <div>
@@ -59,9 +56,8 @@ class Home extends Component {
                         <img className="home-image" src={heroImage}></img>
                     </div>
                 </div>
-                <div>
-                    
-                    <Category/>
+                <div>  
+                    {/*<Products/>*/}
                     <About/>
                     <Contact/>
                     <Footer/>

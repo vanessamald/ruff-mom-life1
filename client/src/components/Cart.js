@@ -40,7 +40,7 @@ class Cart extends Component {
             this.getCartItems(user._id);
         }
         return(
-            <div >
+            <div>
                 <Navigation/>
                 {this.props.isAuthenticated ?
                     <Fragment>
