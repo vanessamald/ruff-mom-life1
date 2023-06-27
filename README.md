@@ -5,9 +5,9 @@ Currently developing an e-commerce website for a client specializing in handmade
 
 ## Table of Contents
 - [Description](#description)  
-- [Must-Haves](#must-haves) 
+- [Prototype](#prototype) 
 - [Technologies](#technologies)   
-- [Usage](#usage) 
+- [Features](#features) 
 - [Deployment](#deployment)
 - [Roadmap](#roadmap)
 
@@ -27,6 +27,7 @@ Currently developing an e-commerce website for a client specializing in handmade
 
 - API integration with MongoDB: The website integrates with MongoDB, a popular NoSQL database, to store and retrieve product data. This integration ensures efficient data management, scalability, and flexibility for the e-commerce platform.
 
+## Technologies
 ![HTML Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white "")
 ![JavaScript Badge](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E "")
 ![CSS Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white "")
@@ -37,6 +38,67 @@ Currently developing an e-commerce website for a client specializing in handmade
 ![Redux Badge](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 ![Framer Badge](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)
 ![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+## Roadmap
+Phase 1: Project Setup and Basic Structure
+
+- Set up the development environment and project structure.
+Initialize the React application and install necessary dependencies.
+- Create a basic folder structure for components, styles, and assets.
+- Set up a version control system (e.g., Git) and establish a repository.
+
+Phase 2: Login Functionality
+
+- Implement user registration and login forms.
+- Set up authentication mechanisms to securely store and manage user credentials.
+- Develop login functionality to authenticate users and manage their sessions.
+- Implement error handling and validation for login forms.
+
+Phase 3: Cart
+
+- Create a cart component to display selected products and their quantities.
+- Implement functionality to add and remove items from the cart.
+Update the cart total dynamically based on the selected items.
+- Integrate with the backend to store cart data and handle cart-related operations.
+
+Phase 4: Products Page
+
+- Design and develop a products page to showcase available dog accessories.
+- Fetch product data from the MongoDB database using API integration.
+- Display product information, including images, descriptions, and pricing.
+- Implement filters or categories for easy product navigation.
+
+Phase 5: API Integration with MongoDB
+
+- Set up a MongoDB database to store product data.
+Develop server-side APIs to handle CRUD operations for products.
+- Integrate the React frontend with the MongoDB APIs to fetch and display product data.
+- Ensure efficient data retrieval and synchronization between the frontend and backend.
+
+Phase 6: Checkout and Order Processing
+
+- Implement a checkout process for users to review their selected items.
+- Integrate with payment gateways or APIs to process secure payments.
+- Develop functionality to generate order confirmations and send email notifications.
+- Update inventory and handle stock management based on successful orders.
+
+Phase 7: Enhancements and Refinements
+
+- Implement additional features based on project requirements.
+- Improve the overall user experience with responsive design and cross-browser compatibility.
+- Perform thorough testing and debugging to ensure the website functions correctly.
+- Optimize performance, including load times and responsiveness.
+
+Phase 8: Deployment and Launch
+
+- Prepare the application for deployment to a production environment.
+- Set up hosting and configure the necessary infrastructure.
+- Perform final testing and quality assurance.
+- Deploy the application and make it accessible to users.
+- Monitor and gather user feedback for future improvements.
+
+## Deployment
+Currently under development.
 
 <br/>  
 <div style="text-align:center">
