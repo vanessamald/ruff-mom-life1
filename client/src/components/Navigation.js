@@ -1,27 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Component, Fragment } from 'react';
-import { Collapse, NavbarToggler, NavbarBrand, NavItem, NavLink } from 'reactstrap';
+//import { Collapse, NavbarToggler, NavbarBrand, NavItem, NavLink } from 'reactstrap';
 import RegisterModal from './auth/register';
 import Logout from './auth/logout';
 import LoginModal from './auth/login';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import Container from 'react-bootstrap/Container';
+//import PropTypes from 'prop-types';
+//import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { RiShoppingCartLine } from "react-icons/ri";
+//import { RiShoppingCartLine } from "react-icons/ri";
 
 function Navigation({ name, ...props }) {
-      
-    const guestLinks = (
-        <Fragment>
-            <NavItem>
-                <RegisterModal/>
-            </NavItem>
-            <NavItem>
-                <LoginModal/>
-            </NavItem>
-        </Fragment>
-    );
         
     const { isAuthenticated, user } = props.auth;
     const [style, setStyle] = useState("hidden-menu");
@@ -84,6 +72,7 @@ function Navigation({ name, ...props }) {
                 <a className="" href="#about">About</a>
                 <a className="" href="#contact">Contact</a>
                 <a className="" href="/orders">Orders</a>
+                <a className="" href="/cart">Cart</a>
             </div>
         </div>
     </>

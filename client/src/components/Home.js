@@ -28,7 +28,7 @@ class Home extends Component {
         item: PropTypes.object.isRequired,
         isAuthenticated: PropTypes.bool,
         addToCart: PropTypes.func.isRequired,
-        user: PropTypes.object.isRequired
+        //user: PropTypes.object.isRequired
     }
 
     onAddToCart = async (id, productId) => {
@@ -57,7 +57,7 @@ class Home extends Component {
                     </div>
                 </div>
                 <div>  
-                    {/*<Products/>*/}
+                    <Products/>
                     <About/>
                     <Contact/>
                     <Footer/>

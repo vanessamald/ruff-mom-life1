@@ -15,9 +15,9 @@ class Products extends Component {
     static propTypes = {
         getItem: PropTypes.func.isRequired,
         item: PropTypes.object.isRequired,
-        isAuthenticated: PropTypes.bool,
+        //isAuthenticated: PropTypes.bool,
         addToCart: PropTypes.func.isRequired,
-        //user: PropTypes.object.isRequired
+        user: PropTypes.object.isRequired
     }
 
     onAddToCart = async (id, productId) => {
